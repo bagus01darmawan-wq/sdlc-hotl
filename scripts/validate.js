@@ -79,6 +79,23 @@ if (process.env.CI === 'true' && exists('PRIBADI-JANGAN-DIUNGGAH.md')) {
   failures.push('KEBOCORAN: PRIBADI-JANGAN-DIUNGGAH.md ikut ter-commit ke repo publik');
 }
 
+// 6. Kartu spesialis berkontrak lengkap (Doktrin Spesialis)
+const KARTU_WAJIB = ['pm.md', 'architect.md', 'qa.md', 'builder.md', 'reviewer.md', 'auditor.md'];
+const BAGIAN_KARTU = ['## 1. Kepemilikan mutlak', '## 2. Batas kedaulatan', '## 3. Naluri pakar', '## 4. Bar kualitas output', '## 5. Jejak pakar wajib', '## 6. Deliverable & tanda tangan'];
+if (!exists('spesialis')) {
+  failures.push('folder spesialis/ hilang');
+} else {
+  for (const f of KARTU_WAJIB) {
+    const rel = `spesialis/${f}`;
+    if (!exists(rel)) { failures.push(`kartu spesialis hilang: ${rel}`); continue; }
+    const t = read(rel);
+    for (const b of BAGIAN_KARTU) {
+      if (!t.includes(b)) failures.push(`${rel}: bagian kontrak hilang -> "${b}"`);
+    }
+  }
+  infos.push(`kartu spesialis diperiksa kontraknya: ${KARTU_WAJIB.length}`);
+}
+
 // Laporan akhir
 for (const i of infos) console.log(`INFO      : ${i}`);
 for (const w of warnings) console.log(`PERINGATAN: ${w}`);

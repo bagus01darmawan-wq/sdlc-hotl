@@ -69,6 +69,7 @@ Sistem ini diakui belum sempurna dan dirancang untuk menyempurnakan dirinya send
 | `01-Checklist-Gerbang.md` | Formulir G0–G4 + stop-loss |
 | `02-Template-PRD.md` | Template semua PRD |
 | `03-PRD-001-Website-LAZISNU.md` | PRD pertama (proyek dry run) |
+| `spesialis/` | Doktrin + 6 Kartu Spesialis + rekam jejak. Sebelum ambil peran, baca kartu peranmu |
 | `README.md` | Deskripsi repo untuk pembaca manusia |
 | `scripts/validate.js` | Pemeriksa otomatis, dijalankan CI. Jalankan lokal: `node scripts/validate.js` |
 | `.github/` | Workflow CI `gerbang-tata-kelola` + template PR (format vonis 4 baris) |
