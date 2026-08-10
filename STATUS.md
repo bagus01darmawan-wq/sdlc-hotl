@@ -8,7 +8,7 @@
 
 ## 1. Di mana kita sekarang
 
-- **Fase:** **F1 (dry run) sedang berjalan** — PRD-001 lolos P0 ✅ (G0 diratifikasi 2026-08-10), kini di P1 (desain, menuju G1).
+- **Fase:** **F1 (dry run)** — PRD-001 lolos P0 ✅ (G0: 2026-08-10) dan P1 ✅ (G1: 2026-08-10), kini di **P2 — tes QA ditulis dulu, builder belum boleh mulai**.
 - **Trust level:** 0 (Magang / HITL penuh)
 - **Proyek dry run:** Website Identitas LAZISNU — lihat `03-PRD-001-Website-LAZISNU.md`
 - **Alat tersedia:** opencode, Trae IDE, Antigravity IDE, hermes agent
@@ -19,21 +19,20 @@
 
 | # | Hal | Sejak | Tergantung jawaban HOTL tentang |
 |---|---|---|---|
-| 1 | Ratifikasi **G1** (paket desain PRD-001, PR #4): jalankan prompt reviewer di Antigravity/Trae, tempel hasilnya, putuskan | 2026-08-10 | — |
-| 2 | Ratifikasi Cadence & Metrik (PR #6) | 2026-08-10 | — |
+| 1 | Review + ratifikasi **Rencana Tes QA** (berkas 05, sedang disusun QA-agent): jalankan prompt reviewer, putuskan — builder baru boleh mulai setelah ini | 2026-08-10 | — |
 
 ## 3. Pekerjaan aktif (cermin tabel pelacakan)
 
 | ID | Pekerjaan | Tahap | Pemegang saat ini | Menunggu HOTL sejak | Status |
 |---|---|---|---|---|---|
-| PRD-001 | Website Identitas LAZISNU | G1 (diajukan, menunggu vonis reviewer + ratifikasi) | HOTL | 2026-08-10 | Paket G1 diajukan |
+| PRD-001 | Website Identitas LAZISNU | P2 — QA menulis tes | QA-agent | — | **G1 DIRATIFIKASI** 2026-08-10 |
 
 ## 4. Langkah berikutnya (siapa melakukan apa)
 
-1. **Architect (sesi ini):** susun paket G1 (dokumen desain baru): ringkasan awam 1 halaman + desain + task breakdown + jawaban Pertanyaan Uji Standar + rencana tes QA.
-2. **HOTL:** jalankan prompt reviewer (tersedia di bawah) di Antigravity/Trae — model berbeda — untuk vonis independen G1.
-3. **HOTL:** ratifikasi G1 (GO/NO-GO) dengan bukti vonis reviewer.
-4. **QA-agent:** setelah G1 GO — tulis tes eksekutor dari AC-01 s.d. AC-10 **sebelum** builder mulai (P2).
+1. **QA-agent (sesi ini):** tulis rencana tes (berkas 05; merah dulu / failing-first; kasus gagal sebelum kasus senang).
+2. **HOTL:** jalankan prompt reviewer atas berkas 05 (sesi baru) → tempel hasilnya → ratifikasi.
+3. **Builder (opencode):** implementasi T1–T12 hingga tes QA hijau — **dilarang menyentuh berkas tes**.
+4. **Reviewer:** vonis G2 (hasil bangunan) dengan bukti demo per AC.
 
 ## 5. Pelajaran tercatat
 
@@ -42,6 +41,7 @@
 - 2026-08-10 — Proteksi diuji dengan memakainya: pencatatan proteksi dilakukan lewat **PR pertama** yang dijaga CI (self-test).
 - 2026-08-10 — Kritik HOTL "klaim spesialisasi belum terbukti" melahirkan doktrin spesialis: pakar harus **berkontrak dan meninggalkan jejak**, bukan dipercaya begitu saja.
 - 2026-08-10 — Insiden **bukti basi**: vonis reviewer ke-3 menilai versi lama G1 (kutipannya cocok dengan v1.0/v1.1, bukan v1.2). Pasal 4 membuktikan diri: bukti kedaluwarsa tidak sah. Antibodi: setiap artefak yang dinilai wajib punya **penanda versi**, dan setiap vonis wajib mengutipnya.
+- 2026-08-10 — Desain lolos lewat lintasan **5 vonis** (2 GAGAL sah, 1 tak sah, 2 bersyarat-lunas). Gerbang yang berputar adalah fitur: keamanan dibeli dengan perbaikan dokumen, bukan dengan insiden produksi.
 
 ## 6. Hasil kalibrasi
 
