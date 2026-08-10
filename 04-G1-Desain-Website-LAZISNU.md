@@ -15,7 +15,7 @@
 
 **Halaman donasi** menampilkan kanal resmi **dengan label jujur** sesuai keputusanmu: rekening sementara atas nama pengurus, rekening lembaga sedang diurus. **Halaman Tentang** menampilkan profil, pengurus, kontak, dan status legalitas apa adanya.
 
-**Apa risiko terburuknya?** (1) Salah ketik angka dana → diredam: setiap perubahan terekam jejaknya (kapan & nilai lama), jadi bisa diperbaiki dan diaudit. (2) Website diserang/dirusak → diredam: seluruh isi situs adalah salinan dari repo; memulihkan = memasang ulang, ±15 menit. (3) Server mati → situs ini "bodoh" & ringan, bisa dipindah ke hosting lain dalam 1 hari kerja.
+**Apa risiko terburuknya?** (1) Salah ketik angka dana → diredam: setiap perubahan terekam jejaknya (kapan & nilai lama), jadi bisa diperbaiki dan diaudit. (2) Website diserang/dirusak → diredam: seluruh isi situs adalah salinan dari repo; memulihkan = memasang ulang, ±15 menit. (3) Server mati → situs ini "bodoh" & ringan, bisa dipindah ke hosting lain dalam 1 hari kerja. (4) **Database disalahgunakan** → diperkeras pasca-tinjau: publik hanya bisa membaca, menulis hanya 2 admin berpassword (dikunci di tingkat database), tidak ada kunci sakti di mana pun, dan CI website memindai kebocoran kunci setiap perubahan.
 
 **Bagaimana membatalkannya?** Matikan alamat png.lazisnu.site — selesai. Situs belum dikenal publik, tidak ada yang rusak. Semua pekerjaan tersimpan rapi di repo untuk dilanjutkan kapan pun.
 
@@ -56,7 +56,7 @@ Urutan mengerjakan = urutan tabel. Setiap tugas selesai hanya jika AC terkaitnya
 | T3 | Beranda: identitas lembaga + panel angka + tombol ke donasi | AC-01, AC-02, AC-05 | Tes "5 detik paham" bisa dilakukan |
 | T4 | Halaman Donasi dari file pribadi + label transparan | AC-04 | Kanal + keterangan terbaca jelas |
 | T5 | Halaman Tentang (profil, legalitas apa adanya, pengurus, kontak) | AC-09 | Semua elemen terbaca |
-| T6 | Skema Supabase: 2 tabel + kunci baca publik + 2 akun admin | fondasi AC-03/05/06 | Database siap & terkunci tulis bagi publik |
+| T6 | Skema Supabase: 3 tabel + **kontrak RLS (Bagian F.2) diterapkan & diverifikasi** + 2 akun admin | fondasi AC-03/05/06 | Database terkunci tulis bagi publik, terbukti via tes SEC-01 |
 | T7 | Halaman Penyaluran: daftar kabar dari database | AC-03 | Kabar tampil otomatis |
 | T8 | Form admin mini: login, form angka (+riwayat), form kabar | AC-03, AC-06 | Admin awam bisa update ≤5 langkah |
 | T9 | Panel angka beranda membaca langsung database | AC-05, AC-06 | Ubah angka → situs berubah seketika |
@@ -82,6 +82,9 @@ Metode: **E2E** = tes otomatis oleh mesin di CI; **MANUAL** = diuji mata/tangan 
 | AC-08 | E2E | Alamat https merespons; sertifikat sah |
 | AC-09 | MANUAL | Semua elemen Tentang ada; legalitas tertulis jujur |
 | AC-10 | E2E | Telusuri semua tautan (tidak ada rusak); pindai teks "lorem ipsum" (harus nol) |
+| SEC-01 | E2E | Tanpa login, **gagal** menulis ke semua tabel (kontrak RLS Bagian F.2 terbukti, bukan dipercaya) |
+| SEC-02 | E2E | Pemindai rahasia di CI repo website: tidak ada kunci/service_role/pola kredensial di kode maupun riwayat commit |
+| SEC-03 | E2E | Halaman admin tanpa login tertolak; login salah ditolak |
 
 ---
 
@@ -103,14 +106,34 @@ Metode: **E2E** = tes otomatis oleh mesin di CI; **MANUAL** = diuji mata/tangan 
 
 ---
 
-## BAGIAN F — Vonis Reviewer Independen (diisi sesi/model BERBEDA — bukan penyusun)
+## BAGIAN F — Vonis Reviewer Independen
 
-> Buka folder ini di **Antigravity IDE / Trae** (model berbeda dari penyusun), jalankan prompt yang diberikan HOTL, tempelkan hasilnya di sini.
+> **Ditempel verbatim oleh HOTL dari sesi Antigravity (Claude Sonnet 4.6 Thinking), 2026-08-10** — sesi/model berbeda dari penyusun, sesuai konstitusi.
 
-- **Vonis:** _belum ada_
-- **Alasan satu kalimat:** _belum ada_
-- **Temuan/catatan:** _belum ada_
-- **Tanggal & alat reviewer:** _belum ada_
+- **Vonis:** **GAGAL** — celah keamanan repo publik (B6) dan RLS Supabase (B3/B4) wajib ditutup sebelum builder boleh mulai.
+- **Alasan satu kalimat:** "Rancangan website sudah masuk akal, tetapi ada satu lubang berbahaya: data rekening lembaga bisa bocor ke internet dan ada celah keamanan database yang belum ditutup sebelum builder mulai bekerja."
+- **Temuan:**
+  1. Repo website publik (B7) + konten dimasukkan dari file pribadi (B6) → risiko nilai sensitif ikut ter-commit/tayang tanpa sengaja; batas publik-vs-rahasia belum didefinisikan keras.
+  2. RLS Supabase belum dispesifikasi eksplisit; *anon key* akan tampil di repo publik → wajib dikunci sebelum builder mulai (B3/B4).
+  - (Rujukan reviewer: Bagian B6, B7, E; Konstitusi Pasal 6(d) — informasi privat bocor = insiden berat; larangan repo publik di AGENTS.md.)
+- **Tanda tangan reviewer:** Antigravity (Claude Sonnet 4.6 Thinking), sesi berbeda dari architect-agent. Self-audit kartu: ✓. Keberatan terbuka: tidak ada.
+- **PILIHAN reviewer:** KEMBALIKAN UNTUK DIPERBAIKI.
+
+## BAGIAN F.2 — Perbaikan pasca-vonis (v1.1, 2026-08-10, architect)
+
+**Jawaban atas Temuan 1 — Konvensi Dua Dompet (B6 dipertajam):**
+- **Dompet PUBLIK** (boleh masuk repo website): HANYA nilai yang memang diputuskan HOTL untuk tampil publik di situs — kanal donasi + label transparan, kontak resmi, struktur pengurus, status legalitas. Daftar nilai-publik ini diceklis HOTL di G2 sebelum rilis, agar tidak ada yang tampil tanpa sengaja.
+- **Dompet RAHASIA** (dilarang masuk repo/kode/commit website): semua yang lain — terutama **service_role key Supabase, kredensial VM/Hostinger/database, password admin**. Aturan keras: *service_role key* **tidak dipakai sama sekali** di Inkremen 1; semua penulisan data lewat login admin (Supabase Auth) + RLS.
+
+**Jawaban atas Temuan 2 — Kontrak RLS tertulis sebelum build (B3/B4 dipertajam):**
+
+| Tabel | Publik (anon) boleh | Admin (2 email terautentikasi) boleh |
+|---|---|---|
+| `angka_dana` | baca baris berstatus aktif | tulis & ubah |
+| `kabar_penyaluran` | baca baris `terbit=true` | tulis & ubah |
+| `riwayat_angka` | **tidak bisa apa-apa** (audit internal) | tulis saja (append-only, tidak bisa hapus) |
+
+Kontrak ini menjadi bagian wajib T6 dan diverifikasi tes keamanan (Bagian D), bukan diserahkan ke improvisasi builder.
 
 ---
 
