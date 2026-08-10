@@ -123,3 +123,4 @@ Salah satu dari:
 | 2026-08-10 | Ratifikasi Konstitusi v0.1 — **GO tanpa ganjalan** | Pasal 1 ayat 1 | **Diratifikasi** | konfirmasi lisan HOTL, sesi ini |
 | 2026-08-10 | Pemilihan proyek dry run: Website LAZISNU | G0 (niat HOTL) | Sah sebagai kandidat PRD-001 | `03-PRD-001-Website-LAZISNU.md` |
 | 2026-08-10 | Sistem diberi organ keabadian: `AGENTS.md` (protokol Bangun/Tutup/Tumbuh) + `STATUS.md` (ingatan) — atas permintaan HOTL agar sistem hidup di sesi mana pun | Kebutuhan portabilitas | Berlaku | `AGENTS.md`, `STATUS.md` |
+| 2026-08-10 | Repo git + CI khusus dibangun atas permintaan HOTL: github.com/bagus01darmawan-wq/sdlc-hotl (private); CI `gerbang-tata-kelola` hijau (run 31347985091) | Pasal 5 (bukti atau tidak terjadi) | Berlaku | hasil run CI |
