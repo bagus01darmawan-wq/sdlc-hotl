@@ -1,6 +1,6 @@
 # PRD-001 — Website Identitas LAZISNU (Inkremen 1)
 
-**Nomor:** PRD-001 | **Tanggal:** 2026-08-10 | **Status:** DRAF v0.2 — menunggu ratifikasi G0 (2 keputusan HOTL 2026-08-10 sudah masuk)
+**Nomor:** PRD-001 | **Tanggal:** 2026-08-10 | **Status:** **DIRATIFIKASI di G0 — 2026-08-10 oleh HOTL** (PR #2, CI hijau)
 **Pemilik niat:** HOTL | **Penyusun draf:** Agen-PM (dari arahan HOTL)
 
 > Dokumen ini disusun agen dari arahanmu. Semua yang bertanda **[ISI:]** hanya bisa dijawab olehmu.
@@ -81,3 +81,4 @@ Website resmi menjadi **identitas organisasi** yang menaikkan citra lembaga. Sat
 | 2026-08-10 | Draf v0.1 disusun dari arahan HOTL | Agen-PM |
 | 2026-08-10 | Koreksi HOTL: night mode masuk AC-07 | HOTL |
 | 2026-08-10 | v0.2: keputusan kanal donasi (label transparan) & legalitas (status apa adanya); isian publik dimasukkan; 5 pertanyaan terbuka terjawab | Agen-PM (dari putusan HOTL) |
+| 2026-08-10 | **GO di G0** — ratifikasi penuh; PRD sah masuk tahap P1 (desain) | HOTL |
