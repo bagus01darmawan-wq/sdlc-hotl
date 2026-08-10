@@ -32,6 +32,8 @@ for (const f of WAJIB) {
 }
 
 // 2. Referensi antardokumen tidak boleh patah
+//    Pengecualian: berkas yang memang sengaja lokal-saja (tidak pernah diunggah).
+const LOKAL_SAJA = new Set(['PRIBADI-JANGAN-DIUNGGAH.md']);
 const mdFiles = fs.readdirSync(root).filter((f) => f.endsWith('.md'));
 for (const f of mdFiles) {
   const text = read(f);
@@ -39,6 +41,7 @@ for (const f of mdFiles) {
   for (const m of text.matchAll(/`([^`]+\.md)`/g)) refs.add(m[1]);
   for (const m of text.matchAll(/\]\(([^)]+\.md)\)/g)) refs.add(m[1]);
   for (const r of refs) {
+    if (LOKAL_SAJA.has(r)) continue;
     if (!exists(r)) failures.push(`${f}: referensi patah -> ${r}`);
   }
 }
