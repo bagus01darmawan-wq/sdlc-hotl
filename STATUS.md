@@ -19,7 +19,8 @@
 
 | # | Hal | Sejak | Tergantung jawaban HOTL tentang |
 |---|---|---|---|
-| 1 | Ratifikasi **G1** (desain + pecahan tugas PRD-001), setelah paket G1 diajukan architect dan divonis reviewer independen | 2026-08-10 | — |
+| 1 | Ratifikasi **G1** (paket desain PRD-001, PR #4): jalankan prompt reviewer di Antigravity/Trae, tempel hasilnya, putuskan | 2026-08-10 | — |
+| 2 | Ratifikasi Cadence & Metrik (PR #6) | 2026-08-10 | — |
 
 ## 3. Pekerjaan aktif (cermin tabel pelacakan)
 
@@ -39,6 +40,7 @@
 - 2026-08-10 — Sistem harus hidup di **berkas, bukan sesi**. Maka lahir `AGENTS.md` + `STATUS.md` + tiga protokol (Bangun, Tutup Sesi, Tumbuh).
 - 2026-08-10 — Konstitusi kini **ditegakkan mesin**: CI `gerbang-tata-kelola` memeriksa setiap perubahan (fail-closed). Janji jadi bukti.
 - 2026-08-10 — Proteksi diuji dengan memakainya: pencatatan proteksi dilakukan lewat **PR pertama** yang dijaga CI (self-test).
+- 2026-08-10 — Kritik HOTL "klaim spesialisasi belum terbukti" melahirkan doktrin spesialis: pakar harus **berkontrak dan meninggalkan jejak**, bukan dipercaya begitu saja.
 
 ## 6. Hasil kalibrasi
 
