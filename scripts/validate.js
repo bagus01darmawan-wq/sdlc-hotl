@@ -68,6 +68,14 @@ if (exists('00-Konstitusi-HOTL.md')) {
   infos.push(`konstitusi: ${(k.match(/\[KALIBRASI\]/g) || []).length} parameter [KALIBRASI] terdaftar`);
 }
 
+// 5. Kebersihan data pribadi (repo ini PUBLIK — pasal keamanan khusus)
+if (!exists('.gitignore') || !read('.gitignore').includes('PRIBADI-JANGAN-DIUNGGAH.md')) {
+  failures.push('.gitignore tidak mengecualikan PRIBADI-JANGAN-DIUNGGAH.md');
+}
+if (process.env.CI === 'true' && exists('PRIBADI-JANGAN-DIUNGGAH.md')) {
+  failures.push('KEBOCORAN: PRIBADI-JANGAN-DIUNGGAH.md ikut ter-commit ke repo publik');
+}
+
 // Laporan akhir
 for (const i of infos) console.log(`INFO      : ${i}`);
 for (const w of warnings) console.log(`PERINGATAN: ${w}`);

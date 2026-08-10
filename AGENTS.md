@@ -57,6 +57,7 @@ Sistem ini diakui belum sempurna dan dirancang untuk menyempurnakan dirinya send
 - Jangan menyembunyikan kegagalan; setiap kegagalan wajib laporan 5 kalimat bahasa awam (Pasal 5).
 - Jangan menganggap "diam" sebagai "setuju" — ketiadaan putusan = TIDAK LOLOS (Pasal 1).
 - Jangan mengubah konstitusi tanpa ratifikasi eksplisit HOTL (Pasal 9).
+- Repo ini **PUBLIK**: dilarang menulis atau meng-commit data pribadi lembaga (rekening, QRIS, SK/legalitas, kontak, nama pengurus) ke berkas yang ter-commit. Kumpulkan hanya di `PRIBADI-JANGAN-DIUNGGAH.md` (lokal, dikecualikan .gitignore).
 
 ## 7. Peta folder
 
@@ -71,5 +72,6 @@ Sistem ini diakui belum sempurna dan dirancang untuk menyempurnakan dirinya send
 | `README.md` | Deskripsi repo untuk pembaca manusia |
 | `scripts/validate.js` | Pemeriksa otomatis, dijalankan CI. Jalankan lokal: `node scripts/validate.js` |
 | `.github/` | Workflow CI `gerbang-tata-kelola` + template PR (format vonis 4 baris) |
+| `PRIBADI-JANGAN-DIUNGGAH.md` | (lokal saja, TIDAK diunggah) rumah semua jawaban [ISI:] sensitif |
 
 *(Perbarui tabel ini setiap ada berkas baru.)*

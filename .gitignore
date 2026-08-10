@@ -3,3 +3,6 @@ node_modules/
 Thumbs.db
 .DS_Store
 desktop.ini
+
+# Data sensitif lembaga — lokal saja, repo ini PUBLIK
+PRIBADI-JANGAN-DIUNGGAH.md

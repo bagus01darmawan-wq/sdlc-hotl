@@ -5,6 +5,8 @@
 
 > Dokumen ini disusun agen dari arahanmu. Semua yang bertanda **[ISI:]** hanya bisa dijawab olehmu.
 > Koreksi sesukamu — kamu pemilik niat. Setelah cocok, ratifikasi = GO di G0.
+>
+> **Repo ini PUBLIK:** tulis jawaban [ISI:] di `PRIBADI-JANGAN-DIUNGGAH.md` (file lokal, tidak ikut diunggah), bukan langsung di dokumen ini.
 
 ---
 
