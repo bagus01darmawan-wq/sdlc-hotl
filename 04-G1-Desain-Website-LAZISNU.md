@@ -1,8 +1,8 @@
 # PAKET G1 — Desain Website LAZISNU MWC NU Kecamatan Paninggaran (PRD-001)
 
 **Tanggal:** 2026-08-10 | **Status:** DIAJUKAN — menunggu vonis reviewer independen + ratifikasi HOTL
-**Versi:** **v1.2** (riwayat: v1.0 → GAGAL-1 · v1.1 → GAGAL-2 · v1.2 = perbaikan 5 temuan)
-**Penanda kesegaran:** baris B6 memuat kata **"DATABASE"** dan ada baris **B11 (≤ 60 detik)** — vonis yang tidak mengutip penanda ini dinilai atas artefak basi dan **tidak sah** (Pasal 4).
+**Versi:** **v1.3** (riwayat: v1.0 → GAGAL-1 · v1.1 → GAGAL-2 · v1.2 → LULUS BERSYARAT · v1.3 = pelunasan 5 syarat + 3 catatan minor)
+**Penanda kesegaran:** baris "Versi" tertulis **v1.3**, B6 memuat kata **"DATABASE"**, ada baris **B11 (≤ 60 detik)** — vonis yang tidak mengutip penanda ini dinilai atas artefak basi dan **tidak sah** (Pasal 4).
 **Penyusun:** Architect-agent | **Acuan:** `03-PRD-001-Website-LAZISNU.md` (v0.2, DIRATIFIKASI G0)
 
 ---
@@ -111,8 +111,9 @@ Metode: **E2E** = tes otomatis oleh mesin di CI; **MANUAL** = diuji mata/tangan 
 | SEC-02 | E2E | Pemindai rahasia di CI repo website: tidak ada kunci/service_role/pola kredensial di kode maupun riwayat commit |
 | SEC-03 | E2E | Halaman admin tanpa login tertolak; login salah ditolak |
 | OPS-01 | MANUAL | Uji rollback tercatat: kembalikan situs ke versi sebelumnya, waktu diukur stopwatch — bar ≤ 15 menit; bukti wajib **G3** (mengubah "±15 menit" dari janji jadi bukti) |
-| OPS-02 | MANUAL | Uji portabilitas: pasang salinan situs di lokasi uji kedua — bukti alamat uji hidup (membuktikan "pindah hosting 1 hari kerja" bukan janji kosong) |
+| OPS-02 | MANUAL | Uji portabilitas: pasang salinan situs di lokasi uji kedua — bukti alamat uji hidup; waktu pengerjaan dicatat — **bar ≤ 1 hari kerja** |
 | OPS-03 | MANUAL | Simulasi lupa-password saat pelatihan admin (T12): alur reset sampai berhasil masuk, disaksikan HOTL |
+| OPS-04 | MANUAL (E2E pendukung) | Simulasi koneksi database gagal → situs tetap tampil; panel angka/kabar menampilkan "terakhir diperbarui [tanggal]", bukan layar rusak (peredam downtime, Bagian E) |
 
 ---
 
@@ -165,6 +166,7 @@ Metode: **E2E** = tes otomatis oleh mesin di CI; **MANUAL** = diuji mata/tangan 
 | `angka_dana` | baca baris berstatus aktif | tulis & ubah |
 | `kabar_penyaluran` | baca baris `terbit=true` | tulis & ubah |
 | `riwayat_angka` | **tidak bisa apa-apa** (audit internal) | tulis saja (append-only, tidak bisa hapus) |
+| `konten_halaman` | baca baris aktif (isi situs memang publik) | tulis & ubah |
 
 Kontrak ini menjadi bagian wajib T6 dan diverifikasi tes keamanan (Bagian D), bukan diserahkan ke improvisasi builder.
 
@@ -207,6 +209,10 @@ Pengakuan jujur: penilaian jejak diterima. Lima perbaikan untuk lima temuan:
 3. **Risiko downtime Supabase masuk Bagian E** + peredam: situs tetap tampil dari salinan statis, panel data menampilkan "terakhir diperbarui [tanggal]".
 4. **Risiko email admin tak terakses masuk Bagian E** + peredam: alamat khusus lembaga dipegang 2 pengurus + prosedur darurat langkah-demi-langkah + simulasi (OPS-03).
 5. **Skema data dikunci:** 4 tabel lengkap dengan kolom & tipe (Bagian "Skema data"); perubahan skema masa depan = amendemen desain via PR.
+
+## BAGIAN F.7 — Vonis keempat (final, 2026-08-10, ditempel HOTL)
+
+> Antigravity (Claude Sonnet 4.6 Thinking). **VONIS: LULUS BERSYARAT** — "Lima temuan reviewer ketiga semuanya dilunasi." Satu kewajiban: perbarui penanda versi ke v1.3 — **dilakukan** (protokol anti-basi menangkap kelalaian architect). Tiga catatan minor — bar waktu OPS-02, ID tes downtime, RLS `konten_halaman` — **dilunasi di v1.3 ini juga** (OPS-02 diberi bar ≤ 1 hari kerja; downtime diberi ID OPS-04; `konten_halaman` masuk tabel RLS F.2: anon baca baris aktif), diteruskan ke QA/builder sebagai realisasi, atas seizin reviewer tanpa siklus baru.
 
 ---
 
