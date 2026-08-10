@@ -41,6 +41,7 @@
 - 2026-08-10 — Konstitusi kini **ditegakkan mesin**: CI `gerbang-tata-kelola` memeriksa setiap perubahan (fail-closed). Janji jadi bukti.
 - 2026-08-10 — Proteksi diuji dengan memakainya: pencatatan proteksi dilakukan lewat **PR pertama** yang dijaga CI (self-test).
 - 2026-08-10 — Kritik HOTL "klaim spesialisasi belum terbukti" melahirkan doktrin spesialis: pakar harus **berkontrak dan meninggalkan jejak**, bukan dipercaya begitu saja.
+- 2026-08-10 — Insiden **bukti basi**: vonis reviewer ke-3 menilai versi lama G1 (kutipannya cocok dengan v1.0/v1.1, bukan v1.2). Pasal 4 membuktikan diri: bukti kedaluwarsa tidak sah. Antibodi: setiap artefak yang dinilai wajib punya **penanda versi**, dan setiap vonis wajib mengutipnya.
 
 ## 6. Hasil kalibrasi
 

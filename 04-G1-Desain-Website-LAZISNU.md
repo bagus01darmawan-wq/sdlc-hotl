@@ -1,6 +1,8 @@
 # PAKET G1 — Desain Website LAZISNU MWC NU Kecamatan Paninggaran (PRD-001)
 
 **Tanggal:** 2026-08-10 | **Status:** DIAJUKAN — menunggu vonis reviewer independen + ratifikasi HOTL
+**Versi:** **v1.2** (riwayat: v1.0 → GAGAL-1 · v1.1 → GAGAL-2 · v1.2 = perbaikan 5 temuan)
+**Penanda kesegaran:** baris B6 memuat kata **"DATABASE"** dan ada baris **B11 (≤ 60 detik)** — vonis yang tidak mengutip penanda ini dinilai atas artefak basi dan **tidak sah** (Pasal 4).
 **Penyusun:** Architect-agent | **Acuan:** `03-PRD-001-Website-LAZISNU.md` (v0.2, DIRATIFIKASI G0)
 
 ---
