@@ -70,6 +70,7 @@ Sistem ini diakui belum sempurna dan dirancang untuk menyempurnakan dirinya send
 | `02-Template-PRD.md` | Template semua PRD |
 | `03-PRD-001-Website-LAZISNU.md` | PRD pertama (proyek dry run) |
 | `04-G1-Desain-Website-LAZISNU.md` | Paket desain G1 untuk PRD-001 |
+| `05-Rencana-Tes-PRD-001.md` | Tes QA untuk PRD-001 (ditulis sebelum builder mulai) |
 | `06-Cadence-Metrik.md` | Ritme HOTL/spesialis + metrik kesehatan sistem |
 | `spesialis/` | Doktrin + 6 Kartu Spesialis + rekam jejak. Sebelum ambil peran, baca kartu peranmu |
 | `README.md` | Deskripsi repo untuk pembaca manusia |
