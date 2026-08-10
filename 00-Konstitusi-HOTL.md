@@ -127,3 +127,4 @@ Salah satu dari:
 | 2026-08-10 | **Ratifikasi G0 PRD-001 (Website LAZISNU v0.2) — GO** oleh HOTL; tahap P0 selesai, masuk P1 (desain) | Checklist G0 (`01-Checklist-Gerbang.md`) | Sah | PR #2, CI run 31350814807 |
 | 2026-08-10 | Organ baru: **Doktrin + Kartu Spesialis** (`spesialis/`) diajukan atas kritik HOTL "klaim spesialisasi belum terbukti" — kontrak craft, jejak pakar wajib, canary pakar, rekam jejak | Pasal 8 (anti-manipulasi) | **Diratifikasi (GO)** | PR #5 |
 | 2026-08-10 | Dokumen Cadence & Metrik (berkas 06: ritme 10/30/60 HOTL + ritme event-driven spesialis + 4 angka DORA-lite + 2 metrik khas) diajukan | Kerangka pasca-role-mapping | Menunggu ratifikasi | PR #6 |
+| 2026-08-10 | **Amendemen kartu Reviewer:** protokol anti-basi jadi kewajiban permanen (kutip penanda versi artefak; vonis atas artefak basi tidak sah) — diusulkan sistem pasca-insiden bukti basi, disetujui HOTL | Pasal 9 | **Diratifikasi** | PR #8 |
