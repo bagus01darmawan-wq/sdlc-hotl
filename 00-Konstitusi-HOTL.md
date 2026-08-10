@@ -124,4 +124,4 @@ Salah satu dari:
 | 2026-08-10 | Pemilihan proyek dry run: Website LAZISNU | G0 (niat HOTL) | Sah sebagai kandidat PRD-001 | `03-PRD-001-Website-LAZISNU.md` |
 | 2026-08-10 | Sistem diberi organ keabadian: `AGENTS.md` (protokol Bangun/Tutup/Tumbuh) + `STATUS.md` (ingatan) — atas permintaan HOTL agar sistem hidup di sesi mana pun | Kebutuhan portabilitas | Berlaku | `AGENTS.md`, `STATUS.md` |
 | 2026-08-10 | Repo git + CI khusus dibangun atas permintaan HOTL: github.com/bagus01darmawan-wq/sdlc-hotl (private); CI `gerbang-tata-kelola` hijau (run 31347985091) | Pasal 5 (bukti atau tidak terjadi) | Berlaku | hasil run CI |
-| 2026-08-10 | Repo dijadikan **PUBLIK** + **branch protection** aktif di `main`: semua perubahan wajib PR dengan CI `pemeriksa-tata-kelola` hijau, berlaku juga untuk admin; force push & penghapusan branch dilarang — putusan HOTL setelah tersaji 3 opsi | Pasal 9 (konstitusi beku) | Berlaku | respons API protection; PR pertama |
+| 2026-08-10 | **Ratifikasi G0 PRD-001 (Website LAZISNU v0.2) — GO** oleh HOTL; tahap P0 selesai, masuk P1 (desain) | Checklist G0 (`01-Checklist-Gerbang.md`) | Sah | PR #2, CI run 31350814807 |
