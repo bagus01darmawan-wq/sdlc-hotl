@@ -25,7 +25,7 @@
 
 | ID | Pekerjaan | Tahap | Pemegang saat ini | Menunggu HOTL sejak | Status |
 |---|---|---|---|---|---|
-| PRD-001 | Website Identitas LAZISNU | P1 (menuju G1) | Architect | — | **G0 DIRATIFIKASI** 2026-08-10 |
+| PRD-001 | Website Identitas LAZISNU | G1 (diajukan, menunggu vonis reviewer + ratifikasi) | HOTL | 2026-08-10 | Paket G1 diajukan |
 
 ## 4. Langkah berikutnya (siapa melakukan apa)
 
