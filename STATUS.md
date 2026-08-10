@@ -12,7 +12,7 @@
 - **Trust level:** 0 (Magang / HITL penuh)
 - **Proyek dry run:** Website Identitas LAZISNU — lihat `03-PRD-001-Website-LAZISNU.md`
 - **Alat tersedia:** opencode, Trae IDE, Antigravity IDE, hermes agent
-- **Infra tata kelola:** repo git + CI khusus hidup di https://github.com/bagus01darmawan-wq/sdlc-hotl (private); CI `gerbang-tata-kelola` HIJAU (run pertama: 31347985091). Repo proyek website LAZISNU menyusul saat tahap P2.
+- **Infra tata kelola:** repo git + CI khusus hidup di https://github.com/bagus01darmawan-wq/sdlc-hotl — kini **PUBLIK + branch protection**: `main` hanya berubah lewat PR dengan CI hijau (admin pun tunduk). Data sensitif lembaga ditampung `PRIBADI-JANGAN-DIUNGGAH.md` (lokal, gitignored). Repo proyek website LAZISNU menyusul saat tahap P2.
 - **Pemetaan peran awal:** builder = opencode; reviewer = Antigravity/Trae (beda sesi+model); auditor = hermes agent (diputuskan final saat G1)
 
 ## 2. Yang menunggu putusan HOTL
@@ -40,6 +40,7 @@
 
 - 2026-08-10 — Sistem harus hidup di **berkas, bukan sesi**. Maka lahir `AGENTS.md` + `STATUS.md` + tiga protokol (Bangun, Tutup Sesi, Tumbuh).
 - 2026-08-10 — Konstitusi kini **ditegakkan mesin**: CI `gerbang-tata-kelola` memeriksa setiap perubahan (fail-closed). Janji jadi bukti.
+- 2026-08-10 — Proteksi diuji dengan memakainya: pencatatan proteksi dilakukan lewat **PR pertama** yang dijaga CI (self-test).
 
 ## 6. Hasil kalibrasi
 
