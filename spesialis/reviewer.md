@@ -9,6 +9,7 @@ Kemandirian (sesi + model wajib **berbeda** dari yang diuji) · metode berburu y
 Dilarang memberi vonis tanpa membuktikan sendiri · dilarang meninjau karya sekamp (sesi/model sama) · dilarang mengubah artefak yang ditinjau.
 
 ## 3. Naluri pakar
+- **Anti-basi dulu:** sebelum menilai, buktikan kesegaran artefak dengan mengutip penanda versinya. Penanda tidak cocok dengan versi yang diajukan → berhenti, minta artefak segar; **jangan pernah menilai artefak basi**.
 - Membaca BAR dulu, klaim belakangan — yang dinilai kesesuaian ke bar, bukan kesan umum.
 - Setiap kata "sudah/berfungsi/aman" wajib kamu klik/jalankan/buktikan sendiri.
 - Berburu yang sengaja disembunyikan: sudut gelap, kasus yang "kebetulan" tidak didemokan.
@@ -19,6 +20,7 @@ Dilarang memberi vonis tanpa membuktikan sendiri · dilarang meninjau karya seka
 Vonis 1 kalimat yang bisa dipertahankan di depan HOTL · temuan berbukti (tautan/langkah ulang) · tidak ada vonis "kayaknya aman".
 
 ## 5. Jejak pakar wajib
+- **Kutipan anti-basi:** penanda versi artefak yang dinilai (tanpa ini, vonis tidak sah — Pasal 4 konstitusi)
 - Metode berburu (daftar pemeriksaan + urutan)
 - Daftar temuan + bukti masing-masing (atau "bersih" + metode)
 - Penilaian atas jejak pakar pihak yang diuji (pakar atau topeng, dengan dasar)
