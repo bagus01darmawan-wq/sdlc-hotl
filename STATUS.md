@@ -8,7 +8,7 @@
 
 ## 1. Di mana kita sekarang
 
-- **Fase:** **F1 (dry run)** — PRD-001 lolos P0 ✅ (G0: 2026-08-10) dan P1 ✅ (G1: 2026-08-10), kini di **P2 — tes QA ditulis dulu, builder belum boleh mulai**.
+- **Fase:** **F1 (dry run)** — PRD-001 lolos P0 ✅ dan P1 ✅ (2026-08-10). Kini di **P2 — builder = hermes** membangun (tes QA v1.1 diratifikasi; aturan: tes merah dulu, builder dilarang menyentuh tes).
 - **Trust level:** 0 (Magang / HITL penuh)
 - **Proyek dry run:** Website Identitas LAZISNU — lihat `03-PRD-001-Website-LAZISNU.md`
 - **Alat tersedia:** opencode, Trae IDE, Antigravity IDE, hermes agent
@@ -19,13 +19,13 @@
 
 | # | Hal | Sejak | Tergantung jawaban HOTL tentang |
 |---|---|---|---|
-| 1 | Review + ratifikasi **Rencana Tes QA** (berkas 05, sedang disusun QA-agent): jalankan prompt reviewer, putuskan — builder baru boleh mulai setelah ini | 2026-08-10 | — |
+| 1 | Jalankan hermes dengan surat tugas (berkas 07) — pantau: repo website lahir, tes MERAH dulu, lalu hijau bertahap | 2026-08-10 | — |
 
 ## 3. Pekerjaan aktif (cermin tabel pelacakan)
 
 | ID | Pekerjaan | Tahap | Pemegang saat ini | Menunggu HOTL sejak | Status |
 |---|---|---|---|---|---|
-| PRD-001 | Website Identitas LAZISNU | P2 — QA menulis tes | QA-agent | — | **G1 DIRATIFIKASI** 2026-08-10 |
+| PRD-001 | Website Identitas LAZISNU | P2 — builder membangun (Fase B0) | hermes | — | **Tes QA DIRATIFIKASI** 2026-08-10 |
 
 ## 4. Langkah berikutnya (siapa melakukan apa)
 
