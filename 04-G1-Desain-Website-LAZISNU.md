@@ -15,11 +15,11 @@
 
 **Di mana isi situs disimpan?** Semua isi (kabar, angka, info donasi, profil lembaga) disimpan **di database — bukan di berkas kode**. Jadi data lembaga tidak pernah menempel di riwayat kode yang bersifat publik.
 
-**Bagaimana admin (orang awam) memperbarui isi?** Satu halaman khusus terkunci password: buka → masuk → isi kolom → simpan. Target kami: **maksimal 5 langkah**, bisa diajarkan dalam 30 menit. Lupa password? Ada tombol kirim tautan ke email admin, dan dua admin saling memback-up.
+**Bagaimana admin (orang awam) memperbarui isi?** Satu halaman khusus terkunci password: buka → masuk → isi kolom → simpan. Target kami: **maksimal 5 langkah**, bisa diajarkan dalam 30 menit. Lupa password? Ada tombol kirim tautan ke email admin, dan dua admin saling memback-up. Kalau email pun bermasalah: ada prosedur darurat tertulis langkah-demi-langkah (disimpan bersama kartu akses).
 
 **Halaman donasi** menampilkan kanal resmi **dengan label jujur** sesuai keputusanmu: rekening sementara atas nama pengurus, rekening lembaga sedang diurus. **Halaman Tentang** menampilkan profil, pengurus, kontak, dan status legalitas apa adanya.
 
-**Apa risiko terburuknya?** (1) Salah ketik angka dana → diredam: setiap perubahan terekam jejaknya (kapan & nilai lama), jadi bisa diperbaiki dan diaudit. (2) Website diserang/dirusak → diredam: seluruh isi situs adalah salinan dari repo; memulihkan = memasang ulang, ±15 menit. (3) Server mati → situs ini "bodoh" & ringan, bisa dipindah ke hosting lain dalam 1 hari kerja. (4) **Database disalahgunakan** → diperkeras pasca-tinjau: publik hanya bisa membaca, menulis hanya 2 admin berpassword (dikunci di tingkat database), tidak ada kunci sakti di mana pun, dan CI website memindai kebocoran kunci setiap perubahan.
+**Apa risiko terburuknya?** (1) Salah ketik angka dana → diredam: setiap perubahan terekam jejaknya (kapan & nilai lama), jadi bisa diperbaiki dan diaudit. (2) Website diserang/dirusak → diredam: seluruh isi situs adalah salinan dari repo; memulihkan = memasang ulang, ±15 menit. (3) Server mati → situs ini "bodoh" & ringan, bisa dipindah ke hosting lain dalam 1 hari kerja. (4) **Database disalahgunakan** → diperkeras pasca-tinjau: publik hanya bisa membaca, menulis hanya 2 admin berpassword (dikunci di tingkat database), tidak ada kunci sakti di mana pun, dan CI website memindai kebocoran kunci setiap perubahan. (5) **Database sempat padam** → situs tetap tampil normal dari salinan statis; panel angka/kabar menampilkan catatan "terakhir diperbarui [tanggal]", bukan layar rusak. Dan dua janji operasional — pulih ±15 menit dan pindah hosting ±1 hari kerja — **dibuktikan lewat uji tercatat (OPS-01/OPS-02)**, bukan sekadar ditulis.
 
 **Bagaimana membatalkannya?** Matikan alamat png.lazisnu.site — selesai. Situs belum dikenal publik, tidak ada yang rusak. Semua pekerjaan tersimpan rapi di repo untuk dilanjutkan kapan pun.
 
@@ -59,6 +59,15 @@ Beranda (identitas + angka dana + tombol donasi) · Penyaluran (daftar kabar dar
 - **Pembaca (publik):** browser → Supabase (baca-saja, baris berstatus "terbit") → tampil.
 - **Penulis (2 admin):** halaman admin → login → simpan → database → situs ikut berubah. Pengunjung tidak bisa menulis apa pun (dikunci di tingkat database).
 
+### Skema data (dikunci di G1 — perubahan skema di masa depan = amendemen desain via PR)
+
+| Tabel | Kolom (tipe) | Dipakai untuk |
+|---|---|---|
+| `angka_dana` | id (angka) · periode (teks) · terkumpul (angka) · tersalurkan (angka) · aktif (ya/tidak) · diubah_pada (waktu) | panel angka beranda (AC-05/06) |
+| `riwayat_angka` | id · terkumpul_lama (angka) · terkumpul_baru · tersalurkan_lama · tersalurkan_baru · diubah_oleh (teks) · diubah_pada (waktu) | jejak audit perubahan angka (B5) |
+| `kabar_penyaluran` | id · judul (teks) · tanggal (tanggal) · ringkasan (teks) · url_foto (teks) · terbit (ya/tidak) · dibuat_pada (waktu) | halaman penyaluran (AC-03) |
+| `konten_halaman` | kunci (teks unik: `donasi_kanal`, `donasi_label`, `kontak_resmi`, `tentang_profil`, `tentang_legalitas`, `tentang_pengurus`) · nilai (teks) · diubah_pada (waktu) | isi halaman donasi & tentang (B6) |
+
 ---
 
 ## BAGIAN C — Pecahan Tugas (untuk builder di tahap P2)
@@ -93,7 +102,7 @@ Metode: **E2E** = tes otomatis oleh mesin di CI; **MANUAL** = diuji mata/tangan 
 | AC-03 | MANUAL (E2E hanya pendukung) | **Manusia (inti):** admin menambah kabar tanpa menyentuh kode, disaksikan HOTL. Mesin (pendukung saja): kabar contoh tampil di halaman |
 | AC-04 | MANUAL (E2E hanya pendukung) | **Manusia (inti):** HOTL membandingkan nomor/QRIS ke dokumen resmi dan menilai label terbaca. Mesin (pendukung saja): elemen label ada & terlihat, format nomor sesuai |
 | AC-05 | E2E | Elemen angka terkumpul & tersalurkan ada di beranda |
-| AC-06 | E2E + MANUAL | Ubah angka → tampil **≤ 60 detik** dari simpan (B11); waktu dicatat & dibandingkan; tanpa ubah kode |
+| AC-06 | E2E + MANUAL | Bar: **≤ 60 detik** (B11). **Alat & pencatat:** (i) mesin — CI menyimpan angka lalu mem-poll situs, mencatat detik sampai berubah (log berstempel waktu); (ii) HOTL sendiri — ubah angka uji di HP → catat jam:menit:detik → segarkan halaman publik tiap ±10 detik → catat saat berubah. **Format log:** disimpan-pada / tampil-pada / selisih detik / lulus(≤60)? — diisi HOTL di lembar bukti G2 tanpa membaca kode |
 | AC-07 | E2E + MANUAL | Toggle night mode bekerja; tampilan rapi dua mode |
 | AC-08 | E2E | Alamat https merespons; sertifikat sah |
 | AC-09 | MANUAL | Semua elemen Tentang ada; legalitas tertulis jujur |
@@ -101,6 +110,9 @@ Metode: **E2E** = tes otomatis oleh mesin di CI; **MANUAL** = diuji mata/tangan 
 | SEC-01 | E2E | Tanpa login, **gagal** menulis ke semua tabel (kontrak RLS Bagian F.2 terbukti, bukan dipercaya) |
 | SEC-02 | E2E | Pemindai rahasia di CI repo website: tidak ada kunci/service_role/pola kredensial di kode maupun riwayat commit |
 | SEC-03 | E2E | Halaman admin tanpa login tertolak; login salah ditolak |
+| OPS-01 | MANUAL | Uji rollback tercatat: kembalikan situs ke versi sebelumnya, waktu diukur stopwatch — bar ≤ 15 menit; bukti wajib **G3** (mengubah "±15 menit" dari janji jadi bukti) |
+| OPS-02 | MANUAL | Uji portabilitas: pasang salinan situs di lokasi uji kedua — bukti alamat uji hidup (membuktikan "pindah hosting 1 hari kerja" bukan janji kosong) |
+| OPS-03 | MANUAL | Simulasi lupa-password saat pelatihan admin (T12): alur reset sampai berhasil masuk, disaksikan HOTL |
 
 ---
 
@@ -114,6 +126,8 @@ Metode: **E2E** = tes otomatis oleh mesin di CI; **MANUAL** = diuji mata/tangan 
 - *Miskonfigurasi RLS oleh builder* → kebijakan dikunci tertulis (B9/F.2) + tes SEC-01 wajib **gagal-saat-anon-menulis**; builder tak mengimprovisasi keamanan (tambahan v1.2).
 - *Konten lembaga bocor lewat repo publik* → konten pindah ke database, repo kode-murni (B6/B7) + pemindai SEC-02 (tambahan v1.2).
 - *Admin awam lupa password* → tombol lupa-password ke email admin + 2 akun redundan + prosedur darurat (B10) (tambahan v1.2).
+- *Database pihak ketiga padam (downtime)* → situs tetap tampil dari salinan statis; panel data menampilkan "terakhir diperbarui [tanggal]" daripada layar rusak; diuji di G2/G3 (tambahan v1.3, temuan reviewer).
+- *Email admin tidak bisa diakses* → email admin memakai alamat khusus lembaga yang dipegang 2 pengurus + prosedur darurat langkah-demi-langkah di file pribadi + simulasi reset saat pelatihan (OPS-03) (tambahan v1.3, temuan reviewer).
 
 **2. "Bukti mana yang paling mudah dipalsukan, dan bagaimana kesegarannya diverifikasi?"**
 - Tangkapan layar/demo bisa basi → pengujian G2 & G4 menyasar **situs yang hidup**, bukan gambar.
@@ -179,6 +193,20 @@ Pengakuan jujur: penilaian jejak diterima. Lima perbaikan untuk lima temuan:
 3. **Ambang AC-06 dikunci: ≤ 60 detik** (B11, Bagian A, Bagian D, T9) — PRD memang menyerahkan angkanya ke G1; sekarang tertulis.
 4. **RLS diratifikasi di G1:** kontrak tertulis di B9 (+F.2) dan risiko miskonfigurasi masuk Bagian E.
 5. **Jejak architect dilengkapi:** tabel "Alternatif yang ditolak" kini ada di Bagian B, dan Bagian E menambah 3 risiko (RLS, repo publik, lupa password).
+
+## BAGIAN F.5 — Vonis ketiga reviewer (2026-08-10, ditempel HOTL)
+
+> Antigravity (Claude Sonnet 4.6 Thinking). Segar: temuannya spesifik v1.2 (menyebut B11 terkunci, `konten_halaman` "ditambah v1.2") — bukti tak langsung anti-basi; kutipan anti-basi tidak ikut ditempel (catatan proses).
+
+**VONIS: LULUS BERSYARAT** — desain menutup semua AC dan celah keamanan kritis; syarat: 5 item di bawah ditutup di v1.3 sebelum builder mulai. Penilaian jejak: *"Nyata sebagian besar — iterasi tiga versi dengan temuan eksplisit adalah sidik jari proses yang nyata; bukan topeng."*
+
+## BAGIAN F.6 — Perbaikan ketiga (v1.3, 2026-08-10, architect)
+
+1. **AC-06 dapat diverifikasi HOTL:** alat, pencatat, dan format log kini tertulis di Bagian D (mesin: CI berstempel waktu; HOTL: stopwatch HP + tabel 4 kolom).
+2. **Dua janji naratif jadi bukti:** rollback dan portabilitas diubah menjadi uji tercatat **OPS-01 & OPS-02** (bar ≤ 15 menit; situs kembar hidup di lokasi uji) — bukti wajib G3 (Pasal 5.3 dipatuhi).
+3. **Risiko downtime Supabase masuk Bagian E** + peredam: situs tetap tampil dari salinan statis, panel data menampilkan "terakhir diperbarui [tanggal]".
+4. **Risiko email admin tak terakses masuk Bagian E** + peredam: alamat khusus lembaga dipegang 2 pengurus + prosedur darurat langkah-demi-langkah + simulasi (OPS-03).
+5. **Skema data dikunci:** 4 tabel lengkap dengan kolom & tipe (Bagian "Skema data"); perubahan skema masa depan = amendemen desain via PR.
 
 ---
 
