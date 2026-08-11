@@ -2,37 +2,44 @@
 
 **Terakhir diperbarui:** 2026-08-11 (wajib diperbarui di akhir setiap sesi — lihat Protokol Tutup Sesi di `AGENTS.md`)
 
-> **Ringkas untuk agen yang baru bangun:** Konstitusi v0.1 sudah diratifikasi. Kita sedang menyiapkan dry run pertama: Website LAZISNU (PRD-001), status draf, menunggu ratifikasi G0 oleh HOTL. Trust level 0 = semua langkah menunggu putusan HOTL.
+> **Ringkas untuk agen yang baru bangun:** Konstitusi v0.1 diratifikasi. Dry run PRD-001 (Website LAZISNU) sudah jauh: situs **LIVE di https://png.lazisnu.site**, tes QA Gelombang-1 & 2 (11 tes) **hijau semua di CI**, database schema `lazisnu` aktif, dan cabang khusus Tim Desain (web/UI/UX designer) baru lahir (PR #12/#13). Yang menunggu HOTL: sesi latihan admin (T12), QRIS opsional, lalu G3 (gelombang tes 3). Trust level 0 = semua langkah menunggu putusan HOTL.
 
 ---
 
 ## 1. Di mana kita sekarang
 
-- **Fase:** **F1 (dry run)** — PRD-001 lolos P0 ✅ dan P1 ✅ (2026-08-10). Kini di **P2 — builder = hermes** membangun (tes QA v1.1 diratifikasi; aturan: tes merah dulu, builder dilarang menyentuh tes).
+- **Fase:** **F1 (dry run)** — PRD-001 lolos P0 ✅ dan P1 ✅ (2026-08-10). **P2 nyaris tuntas:** pembangunan T1–T10 selesai, tes QA G1+G2 11/11 hijau di CI; tersisa T12 (latihan admin), QRIS opsional, vonis G2/G3 oleh reviewer independen, dan rilis resmi G3.
 - **Trust level:** 0 (Magang / HITL penuh)
-- **Proyek dry run:** Website Identitas LAZISNU — lihat `03-PRD-001-Website-LAZISNU.md`
-- **Alat tersedia:** opencode, Trae IDE, Antigravity IDE, hermes agent
-- **Infra tata kelola:** repo git + CI khusus hidup di https://github.com/bagus01darmawan-wq/sdlc-hotl — kini **PUBLIK + branch protection**: `main` hanya berubah lewat PR dengan CI hijau (admin pun tunduk). Data sensitif lembaga ditampung `PRIBADI-JANGAN-DIUNGGAH.md` (lokal, gitignored). Repo proyek website LAZISNU menyusul saat tahap P2.
-- **Pemetaan peran awal:** builder = opencode; reviewer = Antigravity/Trae (beda sesi+model); auditor = hermes agent (diputuskan final saat G1)
+- **Proyek dry run:** Website Identitas LAZISNU — `03-PRD-001-Website-LAZISNU.md`; repo **publik** `bagus01darmawan-wq/website-lazisnu` (main diproteksi, CI 3 job: tes-qa, pemindai-rahasia gitleaks, build).
+- **Situs live:** https://png.lazisnu.site — HTTP 200, sertifikat Let's Encrypt valid; VM Tencent 43.128.98.52 (SSH alias `lazisnu`, Ubuntu 22.04.5, nginx container `lazisnu-nginx-1`, vhost di `/opt/lazisnu/nginx/nginx.conf` + backup `.bak-20260811`).
+- **Database:** Supabase `lazisnu-app` (ref `yuhedftrrbitmxcyhfgp`), schema `lazisnu` — 4 tabel (angka_dana, kabar_penyaluran, riwayat_angka, konten_halaman), RLS kontrak F.2 (anon baca terbatas, tulis 401; admin INSERT+SELECT+UPDATE, riwayat append-only), 2 akun admin; data live: periode 2026 terkumpul/tersalur Rp 2.500.000, kabar "santunan anak yatim". Kredensial di `PRIBADI-JANGAN-DIUNGGAH.md` + `D:\bukti-builder\admin-akun.txt` (lokal, gitignored).
+- **Alat tersedia:** opencode, Trae IDE, Antigravity IDE, hermes agent (builder = **hermes**; MCP Supabase terpasang di hermes).
+- **Infra tata kelola:** repo **publik** `bagus01darmawan-wq/sdlc-hotl`, main diproteksi (semua lewat PR + CI `gerbang-tata-kelola`); `PRIBADI-JANGAN-DIUNGGAH.md` lokal saja.
+- **Cabang khusus:** `spesialis/cabang-desain/` — Tim Desain (web designer, UI designer, UX designer), diratifikasi HOTL 2026-08-11 (PR #12, catatan PR #13); jejak pakar masih kosong, menunggu tugas desain nyata.
 
 ## 2. Yang menunggu putusan HOTL
 
 | # | Hal | Sejak | Tergantung jawaban HOTL tentang |
 |---|---|---|---|
-| 1 | Jalankan hermes dengan surat tugas (berkas 07) — pantau: repo website lahir, tes MERAH dulu, lalu hijau bertahap | 2026-08-10 | — |
+| 1 | **Sesi latihan admin (T12)** — ±30 menit, 2 admin diajari mengisi form (butuh HOTL hadir) | 2026-08-11 | Jadwal sesi |
+| 2 | **QRIS** (opsional) — butuh gambar dari HOTL; prasyarat tes TQ-04a di G3 | 2026-08-11 | Ada/tidak & gambarnya |
+| 3 | **Ujian pertama Tim Desain** — mis. tinjau keramahan form admin untuk pengurus awam | 2026-08-11 | Tugas desain nyata pertama |
+| 4 | **G3** — panggil QA-agent gelombang-3 (TQ-04a, TQ-06, TQ-07, TQ-08, TQ-O4) | 2026-08-11 | Kapan dimulai |
 
 ## 3. Pekerjaan aktif (cermin tabel pelacakan)
 
 | ID | Pekerjaan | Tahap | Pemegang saat ini | Menunggu HOTL sejak | Status |
 |---|---|---|---|---|---|
-| PRD-001 | Website Identitas LAZISNU | P2 — builder membangun (Fase B0) | hermes | — | **Tes QA DIRATIFIKASI** 2026-08-10 |
+| PRD-001 | Website Identitas LAZISNU | P2 — T1–T10 selesai, tes G1+G2 11/11 hijau | hermes (builder) | — | **Situs LIVE** + CI hijau; menunggu T12/G3/vonis reviewer |
+| SISTEM | Cabang khusus Tim Desain | Diratifikasi | — | — | **AKTIF** (PR #12/#13) — menunggu tugas nyata |
 
 ## 4. Langkah berikutnya (siapa melakukan apa)
 
-1. **QA-agent (sesi ini):** tulis rencana tes (berkas 05; merah dulu / failing-first; kasus gagal sebelum kasus senang).
-2. **HOTL:** jalankan prompt reviewer atas berkas 05 (sesi baru) → tempel hasilnya → ratifikasi.
-3. **Builder (opencode):** implementasi T1–T12 hingga tes QA hijau — **dilarang menyentuh berkas tes**.
-4. **Reviewer:** vonis G2 (hasil bangunan) dengan bukti demo per AC.
+1. **HOTL:** tentukan jadwal sesi latihan admin (T12) — 2 akun admin siap di `D:\bukti-builder\admin-akun.txt`.
+2. **HOTL:** putuskan QRIS (ada/tidak); jika ada, berikan gambar → builder pasang (T12).
+3. **Builder (hermes):** fasilitasi T12 + QRIS; siapkan bukti untuk vonis G2 (demo per AC).
+4. **Reviewer (independen):** vonis G2 dengan bukti demo per AC; lalu **QA-agent** gelombang-3 (G3) untuk sisa tes.
+5. **HOTL:** ratifikasi G2/G3 → rilis resmi (G3) + pencatatan hasil kalibrasi pertama.
 
 ## 5. Pelajaran tercatat
 
@@ -40,9 +47,11 @@
 - 2026-08-10 — Konstitusi kini **ditegakkan mesin**: CI `gerbang-tata-kelola` memeriksa setiap perubahan (fail-closed). Janji jadi bukti.
 - 2026-08-10 — Proteksi diuji dengan memakainya: pencatatan proteksi dilakukan lewat **PR pertama** yang dijaga CI (self-test).
 - 2026-08-10 — Kritik HOTL "klaim spesialisasi belum terbukti" melahirkan doktrin spesialis: pakar harus **berkontrak dan meninggalkan jejak**, bukan dipercaya begitu saja.
-- 2026-08-10 — Insiden **bukti basi**: vonis reviewer ke-3 menilai versi lama G1 (kutipannya cocok dengan v1.0/v1.1, bukan v1.2). Pasal 4 membuktikan diri: bukti kedaluwarsa tidak sah. Antibodi: setiap artefak yang dinilai wajib punya **penanda versi**, dan setiap vonis wajib mengutipnya.
-- 2026-08-10 — Desain lolos lewat lintasan **5 vonis** (2 GAGAL sah, 1 tak sah, 2 bersyarat-lunas). Gerbang yang berputar adalah fitur: keamanan dibeli dengan perbaikan dokumen, bukan dengan insiden produksi.
-- 2026-08-11 — **Cabang khusus Tim Desain lahir** (atas permintaan HOTL): ruangan `spesialis/cabang-desain/` berisi piagam + 3 kartu (web designer, UI designer, UX designer) — pengangkatan lewat kartu, validator diperluas ke 9 kartu; jejak pakar mereka masih kosong, ujian pertama menunggu tugas desain nyata.
+- 2026-08-10 — Insiden **bukti basi**: vonis reviewer ke-3 menilai versi lama G1. Antibodi: setiap artefak yang dinilai wajib punya **penanda versi**, dan setiap vonis wajib mengutipnya.
+- 2026-08-10 — Desain lolos lewat lintasan **5 vonis**. Gerbang yang berputar adalah fitur: keamanan dibeli dengan perbaikan dokumen, bukan insiden produksi.
+- 2026-08-11 — **Insiden rahasia di tes QA G2**: kredensial admin sempat ter-hardcode di berkas tes → **gitleaks menangkapnya** (SEC-02 bekerja) → riwayat ditulis ulang bersih. Pelajaran: kredensial hanya lewat env/secret, tidak pernah di berkas.
+- 2026-08-11 — **Bug Content-Profile**: form admin gagal simpan (HTTP 404) karena header `Content-Profile` tidak dikirim pada operasi tulis — lolos uji curl manual yang menambahkan header. Pelajaran: uji harus lewat jalur kode yang sama dengan pengguna.
+- 2026-08-11 — **Cabang khusus Tim Desain lahir** (atas permintaan HOTL): `spesialis/cabang-desain/` — piagam + 3 kartu (web designer, UI designer, UX designer); validator diperluas ke 9 kartu; jejak pakar masih kosong.
 
 ## 6. Hasil kalibrasi
 
