@@ -20,7 +20,6 @@
 | # | Hal | Sejak | Tergantung jawaban HOTL tentang |
 |---|---|---|---|
 | 1 | Jalankan hermes dengan surat tugas (berkas 07) — pantau: repo website lahir, tes MERAH dulu, lalu hijau bertahap | 2026-08-10 | — |
-| 2 | **Amendemen: cabang khusus Tim Desain** (`spesialis/cabang-desain/` — piagam + kartu web/UI/UX designer) | 2026-08-11 | Ratifikasi GO/NO-GO di PR |
 
 ## 3. Pekerjaan aktif (cermin tabel pelacakan)
 
@@ -43,6 +42,7 @@
 - 2026-08-10 — Kritik HOTL "klaim spesialisasi belum terbukti" melahirkan doktrin spesialis: pakar harus **berkontrak dan meninggalkan jejak**, bukan dipercaya begitu saja.
 - 2026-08-10 — Insiden **bukti basi**: vonis reviewer ke-3 menilai versi lama G1 (kutipannya cocok dengan v1.0/v1.1, bukan v1.2). Pasal 4 membuktikan diri: bukti kedaluwarsa tidak sah. Antibodi: setiap artefak yang dinilai wajib punya **penanda versi**, dan setiap vonis wajib mengutipnya.
 - 2026-08-10 — Desain lolos lewat lintasan **5 vonis** (2 GAGAL sah, 1 tak sah, 2 bersyarat-lunas). Gerbang yang berputar adalah fitur: keamanan dibeli dengan perbaikan dokumen, bukan dengan insiden produksi.
+- 2026-08-11 — **Cabang khusus Tim Desain lahir** (atas permintaan HOTL): ruangan `spesialis/cabang-desain/` berisi piagam + 3 kartu (web designer, UI designer, UX designer) — pengangkatan lewat kartu, validator diperluas ke 9 kartu; jejak pakar mereka masih kosong, ujian pertama menunggu tugas desain nyata.
 
 ## 6. Hasil kalibrasi
 
