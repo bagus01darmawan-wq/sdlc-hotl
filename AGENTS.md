@@ -17,11 +17,22 @@
 1. Baca `00-Konstitusi-HOTL.md` sepenuhnya.
 2. Baca `STATUS.md` — ini memori dari sesi-sesi sebelumnya.
 3. Baca decision log (Apendiks B konstitusi) — riwayat putusan HOTL.
-4. Nyatakan peranmu (lihat bagian 4), lalu laporkan ke HOTL dalam 3–5 kalimat bahasa awam:
+4. Nyatakan peranmu (lihat bagian 5), lalu laporkan ke HOTL dalam 3–5 kalimat bahasa awam:
    *"Saya [agen], mengambil peran [X]. Status terakhir: [...]. Yang menunggu putusanmu: [...]. Lanjut?"*
 5. Baru mulai bekerja. Dilarang melompat ke pengerjaan sebelum protokol ini selesai.
 
-## 3. Protokol TUTUP SESI — wajib sebelum berhenti
+## 3. Protokol TONGGAK — wajib mencatat setiap pergerakan
+
+Sesi belum "bergerak" sebelum pergerakannya tercatat. Setiap kali terjadi pergerakan yang
+mengubah posisi sistem — commit/PR merged, tes berubah warna, putusan HOTL baru, insiden,
+perubahan tata kelola — agen pemegang pekerjaan **WAJIB memperbarui `STATUS.md` pada saat itu
+juga** (bukan ditumpuk ke tutup sesi), lewat PR kecil bila main diproteksi:
+
+1. Perbarui `STATUS.md` segera: posisi, putusan tertunda, langkah berikutnya.
+2. Catat putusan HOTL ke decision log (Apendiks B konstitusi) bila ada.
+3. Pergerakan tanpa catatan = dianggap tidak terjadi (Pasal 5 ayat 3: bukti atau tidak terjadi).
+
+## 4. Protokol TUTUP SESI — wajib sebelum berhenti
 
 Sesi **belum selesai** sebelum semua ini dilakukan:
 1. Perbarui `STATUS.md`: apa yang berubah, posisi tiap pekerjaan, langkah berikutnya, dan **siapa yang harus memutuskan apa**.
@@ -29,7 +40,7 @@ Sesi **belum selesai** sebelum semua ini dilakukan:
 3. Pindahkan pelajaran/kejadian penting sesi ini ke bagian "Pelajaran" di `STATUS.md`.
 4. Sisakan **nol hal menggantung yang hanya ada di kepalamu** — semua harus tertulis.
 
-## 4. Peran yang bisa kamu ambil
+## 5. Peran yang bisa kamu ambil
 
 Satu sesi = satu peran dominan. **Pembangun ≠ penguji ≠ perilis** (Pasal 5 konstitusi).
 
@@ -42,7 +53,7 @@ Satu sesi = satu peran dominan. **Pembangun ≠ penguji ≠ perilis** (Pasal 5 k
 | Reviewer | Memeriksa bukti di G1–G2, memberi vonis + alasan 1 kalimat | Jadi sesi/model yang sama dengan builder |
 | Auditor | Spot-check acak, canary defect, memeriksa kelonggaran bar | Mengubah artefak yang diaudit |
 
-## 5. Protokol TUMBUH — bila menemukan celah
+## 6. Protokol TUMBUH — bila menemukan celah
 
 Sistem ini diakui belum sempurna dan dirancang untuk menyempurnakan dirinya sendiri:
 - Menemukan celah/kekurangan sistem → **usulkan amendemen** (tulis di decision log dengan status
@@ -51,7 +62,7 @@ Sistem ini diakui belum sempurna dan dirancang untuk menyempurnakan dirinya send
 - Artefak baru mengikuti penomoran berlanjut; PRD memakai format `PRD-NNN` dan template `02-Template-PRD.md`.
 - Pelajaran dari dry run/insiden wajib masuk `STATUS.md` agar generasi sesi berikutnya mewarisinya.
 
-## 6. Larangan mutlak
+## 7. Larangan mutlak
 
 - Jangan menyatakan "selesai/lolos/hijau" tanpa artefak bukti yang bisa dicek HOTL tanpa membaca kode.
 - Jangan menyembunyikan kegagalan; setiap kegagalan wajib laporan 5 kalimat bahasa awam (Pasal 5).
@@ -59,7 +70,7 @@ Sistem ini diakui belum sempurna dan dirancang untuk menyempurnakan dirinya send
 - Jangan mengubah konstitusi tanpa ratifikasi eksplisit HOTL (Pasal 9).
 - Repo ini **PUBLIK**: dilarang menulis atau meng-commit data pribadi lembaga (rekening, QRIS, SK/legalitas, kontak, nama pengurus) ke berkas yang ter-commit. Kumpulkan hanya di `PRIBADI-JANGAN-DIUNGGAH.md` (lokal, dikecualikan .gitignore).
 
-## 7. Peta folder
+## 8. Peta folder
 
 | Berkas | Fungsi |
 |---|---|

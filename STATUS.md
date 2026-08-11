@@ -52,6 +52,7 @@
 - 2026-08-11 — **Insiden rahasia di tes QA G2**: kredensial admin sempat ter-hardcode di berkas tes → **gitleaks menangkapnya** (SEC-02 bekerja) → riwayat ditulis ulang bersih. Pelajaran: kredensial hanya lewat env/secret, tidak pernah di berkas.
 - 2026-08-11 — **Bug Content-Profile**: form admin gagal simpan (HTTP 404) karena header `Content-Profile` tidak dikirim pada operasi tulis — lolos uji curl manual yang menambahkan header. Pelajaran: uji harus lewat jalur kode yang sama dengan pengguna.
 - 2026-08-11 — **Cabang khusus Tim Desain lahir** (atas permintaan HOTL): `spesialis/cabang-desain/` — piagam + 3 kartu (web designer, UI designer, UX designer); validator diperluas ke 9 kartu; jejak pakar masih kosong.
+- 2026-08-11 — Kritik HOTL "STATUS.md tidak mencatat perkembangan" → **Protokol TONGGAK** (AGENTS.md §3): agen wajib memperbarui STATUS.md pada setiap pergerakan, bukan hanya tutup sesi; pilihan HOTL: protokol saja, tanpa mesin otomatis.
 
 ## 6. Hasil kalibrasi
 
