@@ -53,6 +53,8 @@
 - 2026-08-11 — **Bug Content-Profile**: form admin gagal simpan (HTTP 404) karena header `Content-Profile` tidak dikirim pada operasi tulis — lolos uji curl manual yang menambahkan header. Pelajaran: uji harus lewat jalur kode yang sama dengan pengguna.
 - 2026-08-11 — **Cabang khusus Tim Desain lahir** (atas permintaan HOTL): `spesialis/cabang-desain/` — piagam + 3 kartu (web designer, UI designer, UX designer); validator diperluas ke 9 kartu; jejak pakar masih kosong.
 - 2026-08-11 — Kritik HOTL "STATUS.md tidak mencatat perkembangan" → **Protokol TONGGAK** (AGENTS.md §3): agen wajib memperbarui STATUS.md pada setiap pergerakan, bukan hanya tutup sesi; pilihan HOTL: protokol saja, tanpa mesin otomatis.
+- 2026-08-11 — **Revisi tata kelola Tim Desain** (dari tinjauan Sonnet 5 + persetujuan HOTL): 9 poin kelemahan teridentifikasi, 8 diperbaiki (poin 4/eskalasi konflik dikecualikan HOTL). Perubahan: §5 UX/UI kini bergigi (bukti ISO 9241-210 + WAI-ARIA APG wajib disebut konkret), kejujuran ukuran sampel wajib, kepemilikan ringkasan awam diperjelas (UX merakit), plain language masuk standar terukur, aturan propagasi revisi mundur lahir, batas domain keamanan/privasi dicatat. Dua pertanyaan terbuka baru masuk PRD-001 §7 no. 6 & 7.
+- 2026-08-11 — **Jawaban HOTL menutup PRD-001 §7 no. 6–7**: target Android 10–16 + riset top-5 HP/browser Indonesia; situs sepenuhnya Bahasa Indonesia. Baris #5–#6 tabel "Menunggu putusan" dihapus dari STATUS.md (Protokol TONGGAK).
 
 ## 6. Hasil kalibrasi
 
