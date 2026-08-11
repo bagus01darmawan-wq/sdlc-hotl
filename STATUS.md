@@ -2,7 +2,7 @@
 
 **Terakhir diperbarui:** 2026-08-12 (wajib diperbarui di akhir setiap sesi — lihat Protokol Tutup Sesi di `AGENTS.md`)
 
-> **Ringkas untuk agen yang baru bangun:** Konstitusi v0.1 diratifikasi. Dry run PRD-001 (Website LAZISNU) sudah jauh: situs **LIVE di https://png.lazisnu.site**, tes QA Gelombang-1 & 2 (11 tes) **hijau semua di CI**, database schema `lazisnu` aktif, dan cabang khusus Tim Desain (web/UI/UX designer) baru lahir (PR #12/#13). **Tim Desain lulus ujian pertamanya 2026-08-12: paket desain form admin selesai (5 deliverable, 16 putusan HOTL GO), P0+P1+struktur besar sudah TERIMPLEMENTASI (PR website #12/#13/#14), sisa R10/R12/R14 + wajah Web menunggu GO.** Yang menunggu HOTL: GO PR website #14, sesi latihan admin (T12), QRIS opsional, lalu G3 (gelombang tes 3). Trust level 0 = semua langkah menunggu putusan HOTL.
+> **Ringkas untuk agen yang baru bangun:** Konstitusi v0.1 diratifikasi. Dry run PRD-001 (Website LAZISNU) sudah jauh: situs **LIVE di https://png.lazisnu.site**, tes QA Gelombang-1 & 2 (11 tes) **hijau semua di CI**, database schema `lazisnu` aktif, dan cabang khusus Tim Desain (web/UI/UX designer) baru lahir (PR #12/#13). **Tim Desain lulus ujian pertamanya 2026-08-12: paket desain form admin selesai (5 deliverable, 16 putusan HOTL GO), P0+P1+struktur besar LIVE di main dan ter-deploy (PR website #12/#13/#14, GO HOTL 2026-08-12), sisa R10/R12/R14 + wajah Web.** Yang menunggu HOTL: sesi latihan admin (T12), QRIS opsional, lalu G3 (gelombang tes 3). Trust level 0 = semua langkah menunggu putusan HOTL.
 
 ---
 
@@ -24,7 +24,6 @@
 | 1 | **Sesi latihan admin (T12)** — ±30 menit, 2 admin diajari mengisi form (butuh HOTL hadir) | 2026-08-11 | Jadwal sesi |
 | 2 | **QRIS** — belum ada, akan menyusul (putusan HOTL 2026-08-12): **TIDAK memblokir**; sediakan slot + placeholder `[dari database]`; gambar dipasang saat tersedia → TQ-04a menyesuaikan | 2026-08-11 | Gambar QRIS (menyusul) |
 | 3 | **G3** — panggil QA-agent gelombang-3 (TQ-04a, TQ-06, TQ-07, TQ-08, TQ-O4) | 2026-08-11 | Kapan dimulai |
-| 4 | **GO PR website #14 (struktur besar)** — R11 4 layar + R7 daftar kabar + R8 dialog terbit + R9 Admin di header; CI 3/3 hijau, menunggu GO | 2026-08-12 | Merge ke main website |
 
 ## 3. Pekerjaan aktif (cermin tabel pelacakan)
 
@@ -32,16 +31,15 @@
 |---|---|---|---|---|---|
 | PRD-001 | Website Identitas LAZISNU | P2 — T1–T10 selesai, tes G1+G2 11/11 hijau | hermes (builder) | — | **Situs LIVE** + CI hijau; menunggu T12/G3/vonis reviewer |
 | SISTEM | Cabang khusus Tim Desain | Diratifikasi | — | — | **AKTIF** (PR #12/#13) — ujian pertama LULUS 2026-08-12 |
-| DESAIN-T8 | Paket desain form admin (Tim Desain: riset UX + antarmuka UI + wajah Web) | P0+P1+STRUKTUR BESAR TERIMPLEMENTASI (PR website #12/#13/#14, 2026-08-12) — sisa R10/R12/R14 + wajah Web W1–W20 | hermes (builder) | GO PR #14 + GO lanjut sisa | **R7/R8/R9/R11 live di cabang PR #14** — menunggu GO HOTL |
+| DESAIN-T8 | Paket desain form admin (Tim Desain: riset UX + antarmuka UI + wajah Web) | P0+P1+STRUKTUR BESAR LIVE (PR website #12/#13/#14 merged + deploy VM, GO HOTL 2026-08-12) — sisa R10/R12/R14 + wajah Web W1–W20 | hermes (builder) | GO lanjut sisa | **R7/R8/R9/R11 ✅ live di https://png.lazisnu.site** |
 
 ## 4. Langkah berikutnya (siapa melakukan apa)
 
-1. **HOTL:** GO PR website #14 (struktur besar) → builder lanjut sisa paket (R10/R12/R14 + wajah Web W1–W20).
+1. **Builder (hermes):** gelombang sisa paket desain (R10 fallback tanggal, R12 validasi URL foto, R14 galat kolom kosong, lalu wajah Web W1–W20) — GO HOTL PR website #14 selesai 2026-08-12, tidak ada blokir.
 2. **HOTL:** tentukan jadwal sesi latihan admin (T12) — 2 akun admin siap di `D:\bukti-builder\admin-akun.txt`.
 3. **QRIS (putusan HOTL 2026-08-12):** belum ada, akan menyusul — builder sediakan slot + placeholder `[dari database]` (sudah di P0); gambar dipasang saat tersedia.
-4. **Builder (hermes):** setelah GO PR #14 — gelombang sisa paket desain (R10 fallback tanggal, R12 validasi URL foto, R14 galat kolom kosong) → fasilitasi T12 + pasang gambar QRIS saat tersedia; siapkan bukti untuk vonis G2 (demo per AC).
-5. **Reviewer (independen):** vonis G2 dengan bukti demo per AC; lalu **QA-agent** gelombang-3 (G3) untuk sisa tes.
-6. **HOTL:** ratifikasi G2/G3 → rilis resmi (G3) + pencatatan hasil kalibrasi pertama.
+4. **Reviewer (independen):** vonis G2 dengan bukti demo per AC; lalu **QA-agent** gelombang-3 (G3) untuk sisa tes.
+5. **HOTL:** ratifikasi G2/G3 → rilis resmi (G3) + pencatatan hasil kalibrasi pertama.
 
 ## 5. Pelajaran tercatat
 
@@ -64,7 +62,8 @@
 - 2026-08-12 — **P1 paket desain TERIMPLEMENTASI**: PR #13 website-lazisnu merged (commit `6544382`) — R3/R4 (nol kode HTTP; jaringan/server/sesi-mati dibedakan; isian tidak dibuang saat 401), R5 (loading + tolak simpan ganda), R6 (tersalurkan ≤ terkumpul), R13 (banner sukses sebelum→sesudah + "Lihat di situs"); CI 3/3 hijau. Sisa struktur besar (R7/R8/R9/R11) = gelombang berikutnya.
 - 2026-08-12 — **Struktur besar TERIMPLEMENTASI** (PR website #14, menunggu GO): R11 4 layar tugas (`#layar=angka|kabar|donasi|tentang`, isian lintas layar tidak hilang, K2 layar pertama = Angka), R7 daftar kabar + Ubah/Batal + Sembunyikan (PATCH `terbit=false`, jalur sah F.2), R8 dialog konfirmasi terbit (Escape = batal tanpa simpan; kabar terbit simpan langsung), R9 tautan Admin chip di header semua halaman, K7 tanggal = hari ini; bukti MERAH-awal + tontonan di `D:\bukti-builder\struktur-besar\`; lokal & CI 11/11 hijau.
 - 2026-08-12 — **Pitfall TQ-10**: pemindai tautan QA menganggap `admin.html?layar=x` TAUTAN RUSAK (query string tak di-resolve ke berkas) → navigasi layar memakai hash `#layar=` (tetap URL sendiri per layar, bisa di-refresh, TQ-10 hijau). Keputusan mikro tercatat di body PR website #14.
-- 2026-08-12 — **Decision log tertinggal dirapikan**: baris ratifikasi PR #16 (PR #17) dan putusan PR #18/#19/#20 sempat tidak tercatat di Apendiks B (tercatat di Pelajaran) — satu PR pencatatan merapikan semuanya (PR ini).
+- 2026-08-12 — **Decision log tertinggal dirapikan**: baris ratifikasi PR #16 (PR #17) dan putusan PR #18/#19/#20 sempat tidak tercatat di Apendiks B (tercatat di Pelajaran) — satu PR pencatatan merapikan semuanya (PR #21).
+- 2026-08-12 — **GO + deploy struktur besar**: PR website #14 merged (`01624e3`, GO HOTL) + `scripts/deploy-vm.sh` → fitur LIVE di https://png.lazisnu.site (terverifikasi: `tautan-admin` di header publik, `layar-nav` di admin.html); repo tetap bersih (template dipulihkan skrip).
 
 ## 6. Hasil kalibrasi
 
