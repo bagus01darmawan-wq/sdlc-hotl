@@ -26,4 +26,5 @@ Spesialis berdaulat penuh atas CARA dan KUALITAS, tapi tidak memiliki sejengkal 
 - Spesialisasi memerlukan **segregasi**: builder ≠ reviewer (sesi + model berbeda), auditor menyentuh apa pun tanpa mengubahnya.
 - Setiap deliverable ditutup **blok tanda tangan**: misi yang dijalankan, rantai niat, self-audit kartu tercentang, keberatan terbuka (bila ada).
 - Spesialis baru (alat/model baru bergabung) wajib diangkat lewat kartu hasil ratifikasi HOTL — tidak ada penghuni gelap.
+- **Cabang khusus (ruangan tim):** `cabang-desain/` adalah ruangan tiga spesialis yang bekerja sebagai satu tim (web designer → UI designer → UX designer), diikat piagam `spesialis/cabang-desain/README.md`; kartu cabang diperiksa CI sama ketatnya dengan kartu inti.
 - Kartu ini **diperiksa CI**: kartu tanpa struktur kontrak lengkap = pipeline merah.
