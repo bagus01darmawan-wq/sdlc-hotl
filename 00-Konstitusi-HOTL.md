@@ -138,3 +138,4 @@ Salah satu dari:
 | 2026-08-12 | **GO pencatatan tonggak P1 paket desain** (PR website #13 merged) | Protokol TONGGAK | **DIRATIFIKASI (GO) oleh HOTL 2026-08-12** | PR #20 |
 | 2026-08-12 | **GO PR website #14 — struktur besar paket desain** (R7 daftar kabar + Ubah/Sembunyikan, R8 dialog konfirmasi terbit, R9 tautan Admin di header, R11 4 layar tugas `#layar=`, K7 tanggal hari ini); ter-deploy ke VM (png.lazisnu.site) | Pasal 4 | **DIRATIFIKASI (GO) oleh HOTL 2026-08-12** | PR website #14 |
 | 2026-08-12 | **GO pencatatan tonggak struktur besar** (PR #21 tata kelola: STATUS.md + rapiakan decision log) | Protokol TONGGAK | **DIRATIFIKASI (GO) oleh HOTL 2026-08-12** | PR #21 |
+| 2026-08-12 | **GO pencatatan tonggak GO struktur besar** (PR #22 tata kelola: GO PR website #14 + deploy tercatat) | Protokol TONGGAK | **DIRATIFIKASI (GO) oleh HOTL 2026-08-12** | PR #22 |
