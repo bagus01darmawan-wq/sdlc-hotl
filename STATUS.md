@@ -1,8 +1,8 @@
 # STATUS SISTEM — ingatan SDLC-HOTL
 
-**Terakhir diperbarui:** 2026-08-11 (wajib diperbarui di akhir setiap sesi — lihat Protokol Tutup Sesi di `AGENTS.md`)
+**Terakhir diperbarui:** 2026-08-12 (wajib diperbarui di akhir setiap sesi — lihat Protokol Tutup Sesi di `AGENTS.md`)
 
-> **Ringkas untuk agen yang baru bangun:** Konstitusi v0.1 diratifikasi. Dry run PRD-001 (Website LAZISNU) sudah jauh: situs **LIVE di https://png.lazisnu.site**, tes QA Gelombang-1 & 2 (11 tes) **hijau semua di CI**, database schema `lazisnu` aktif, dan cabang khusus Tim Desain (web/UI/UX designer) baru lahir (PR #12/#13). Yang menunggu HOTL: sesi latihan admin (T12), QRIS opsional, lalu G3 (gelombang tes 3). Trust level 0 = semua langkah menunggu putusan HOTL.
+> **Ringkas untuk agen yang baru bangun:** Konstitusi v0.1 diratifikasi. Dry run PRD-001 (Website LAZISNU) sudah jauh: situs **LIVE di https://png.lazisnu.site**, tes QA Gelombang-1 & 2 (11 tes) **hijau semua di CI**, database schema `lazisnu` aktif, dan cabang khusus Tim Desain (web/UI/UX designer) baru lahir (PR #12/#13). **Tim Desain lulus ujian pertamanya 2026-08-12: paket desain form admin selesai (5 deliverable, 16 putusan HOTL GO), menunggu implementasi builder.** Yang menunggu HOTL: sesi latihan admin (T12), QRIS opsional, lalu G3 (gelombang tes 3). Trust level 0 = semua langkah menunggu putusan HOTL.
 
 ---
 
@@ -23,21 +23,21 @@
 |---|---|---|---|
 | 1 | **Sesi latihan admin (T12)** — ±30 menit, 2 admin diajari mengisi form (butuh HOTL hadir) | 2026-08-11 | Jadwal sesi |
 | 2 | **QRIS** (opsional) — butuh gambar dari HOTL; prasyarat tes TQ-04a di G3 | 2026-08-11 | Ada/tidak & gambarnya |
-| 3 | **Ujian pertama Tim Desain** — mis. tinjau keramahan form admin untuk pengurus awam | 2026-08-11 | Tugas desain nyata pertama |
-| 4 | **G3** — panggil QA-agent gelombang-3 (TQ-04a, TQ-06, TQ-07, TQ-08, TQ-O4) | 2026-08-11 | Kapan dimulai |
+| 3 | **G3** — panggil QA-agent gelombang-3 (TQ-04a, TQ-06, TQ-07, TQ-08, TQ-O4) | 2026-08-11 | Kapan dimulai |
 
 ## 3. Pekerjaan aktif (cermin tabel pelacakan)
 
 | ID | Pekerjaan | Tahap | Pemegang saat ini | Menunggu HOTL sejak | Status |
 |---|---|---|---|---|---|
 | PRD-001 | Website Identitas LAZISNU | P2 — T1–T10 selesai, tes G1+G2 11/11 hijau | hermes (builder) | — | **Situs LIVE** + CI hijau; menunggu T12/G3/vonis reviewer |
-| SISTEM | Cabang khusus Tim Desain | Diratifikasi | — | — | **AKTIF** (PR #12/#13) — menunggu tugas nyata |
+| SISTEM | Cabang khusus Tim Desain | Diratifikasi | — | — | **AKTIF** (PR #12/#13) — ujian pertama LULUS 2026-08-12 |
+| DESAIN-T8 | Paket desain form admin (Tim Desain: riset UX + antarmuka UI + wajah Web) | Selesai — 5 deliverable, 16 putusan HOTL GO 2026-08-12 | hermes (builder) | — | **SIAP IMPLEMENTASI** (acuan: `D:\subagent-arsitektur\keluaran\desain-form-admin\`) |
 
 ## 4. Langkah berikutnya (siapa melakukan apa)
 
 1. **HOTL:** tentukan jadwal sesi latihan admin (T12) — 2 akun admin siap di `D:\bukti-builder\admin-akun.txt`.
 2. **HOTL:** putuskan QRIS (ada/tidak); jika ada, berikan gambar → builder pasang (T12).
-3. **Builder (hermes):** fasilitasi T12 + QRIS; siapkan bukti untuk vonis G2 (demo per AC).
+3. **Builder (hermes):** implementasi rekomendasi P0 paket desain form admin (R1: terima angka bertitik; R2: banner muat-gagal) → fasilitasi T12 + QRIS; siapkan bukti untuk vonis G2 (demo per AC).
 4. **Reviewer (independen):** vonis G2 dengan bukti demo per AC; lalu **QA-agent** gelombang-3 (G3) untuk sisa tes.
 5. **HOTL:** ratifikasi G2/G3 → rilis resmi (G3) + pencatatan hasil kalibrasi pertama.
 
@@ -56,6 +56,7 @@
 - 2026-08-11 — **Revisi tata kelola Tim Desain** (dari tinjauan Sonnet 5 + persetujuan HOTL): 9 poin kelemahan teridentifikasi, 8 diperbaiki (poin 4/eskalasi konflik dikecualikan HOTL). Perubahan: §5 UX/UI kini bergigi (bukti ISO 9241-210 + WAI-ARIA APG wajib disebut konkret), kejujuran ukuran sampel wajib, kepemilikan ringkasan awam diperjelas (UX merakit), plain language masuk standar terukur, aturan propagasi revisi mundur lahir, batas domain keamanan/privasi dicatat. Dua pertanyaan terbuka baru masuk PRD-001 §7 no. 6 & 7.
 - 2026-08-11 — **Jawaban HOTL menutup PRD-001 §7 no. 6–7**: target Android 10–16 + riset top-5 HP/browser Indonesia; situs sepenuhnya Bahasa Indonesia. Baris #5–#6 tabel "Menunggu putusan" dihapus dari STATUS.md (Protokol TONGGAK).
 - 2026-08-11 — **PR #16 DIRATIFIKASI (GO) oleh HOTL**: revisi tata kelola Tim Desain (standar-rujukan.md + 3 kartu bergigi standar) + jawaban PRD-001 §7 no. 6–7 resmi masuk main (merge commit `fdcdc70`).
+- 2026-08-12 — **Ujian pertama Tim Desain LULUS**: paket desain form admin (matriks target + riset UX 15 hambatan + kerangka UI K1–K14 + wajah Web W1–W20 + ringkasan awam) dihasilkan lewat arsitektur sub-agent "satu kartu = satu spawn" (acuan: `D:\subagent-arsitektur\keluaran\`); 16 keberatan spesialis direkap, **HOTL GO semua putusan** (2026-08-12); klaim standar seluruhnya ESTIMASI — uji nyata wajib di T12/G3. Pelajaran proses: sub-agent fail-closed jujur (2× berhenti tanpa mengarang bukti); file `gsm-*.html` terbukti invalid → profil perangkat "entry 2–4 GB" = asumsi (putusan #14: lanjut, riset ulang opsional).
 
 ## 6. Hasil kalibrasi
 
