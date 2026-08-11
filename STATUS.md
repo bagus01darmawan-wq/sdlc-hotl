@@ -31,13 +31,13 @@
 |---|---|---|---|---|---|
 | PRD-001 | Website Identitas LAZISNU | P2 — T1–T10 selesai, tes G1+G2 11/11 hijau | hermes (builder) | — | **Situs LIVE** + CI hijau; menunggu T12/G3/vonis reviewer |
 | SISTEM | Cabang khusus Tim Desain | Diratifikasi | — | — | **AKTIF** (PR #12/#13) — ujian pertama LULUS 2026-08-12 |
-| DESAIN-T8 | Paket desain form admin (Tim Desain: riset UX + antarmuka UI + wajah Web) | P0 TERIMPLEMENTASI — R1/R2/slot QRIS merged (PR #12 website, 2026-08-12) | hermes (builder) | — | **P0 ✅ di main** — P1 (R3/R4/R5/R6/R13) menyusul; uji nyata di T12/G3 |
+| DESAIN-T8 | Paket desain form admin (Tim Desain: riset UX + antarmuka UI + wajah Web) | P0+P1 TERIMPLEMENTASI (PR #12 + #13 website, 2026-08-12) | hermes (builder) | — | **P0+P1 ✅ di main** — sisa struktur besar (R7/R8/R9/R11) sebelum G3; uji nyata T12/G3 |
 
 ## 4. Langkah berikutnya (siapa melakukan apa)
 
 1. **HOTL:** tentukan jadwal sesi latihan admin (T12) — 2 akun admin siap di `D:\bukti-builder\admin-akun.txt`.
 2. **QRIS (putusan HOTL 2026-08-12):** belum ada, akan menyusul — builder sediakan slot + placeholder `[dari database]`; gambar dipasang saat tersedia.
-3. **Builder (hermes):** lanjut P1 paket desain (R3/R4 pesan galat kabar, R5 loading tolak ganda, R6 cek tersalurkan ≤ terkumpul, R13 banner sebelum→sesudah) → fasilitasi T12 + pasang gambar QRIS saat tersedia; siapkan bukti untuk vonis G2 (demo per AC).
+3. **Builder (hermes):** gelombang struktur besar (R7 daftar kabar + ubah/sembunyikan, R8 dialog konfirmasi terbit, R9 tautan Admin di nav, R11 pemisahan 4 layar) → fasilitasi T12 + pasang gambar QRIS saat tersedia; siapkan bukti untuk vonis G2 (demo per AC).
 4. **Reviewer (independen):** vonis G2 dengan bukti demo per AC; lalu **QA-agent** gelombang-3 (G3) untuk sisa tes.
 5. **HOTL:** ratifikasi G2/G3 → rilis resmi (G3) + pencatatan hasil kalibrasi pertama.
 
@@ -59,6 +59,7 @@
 - 2026-08-12 — **Ujian pertama Tim Desain LULUS**: paket desain form admin (matriks target + riset UX 15 hambatan + kerangka UI K1–K14 + wajah Web W1–W20 + ringkasan awam) dihasilkan lewat arsitektur sub-agent "satu kartu = satu spawn" (acuan: `D:\subagent-arsitektur\keluaran\`); 16 keberatan spesialis direkap, **HOTL GO semua putusan** (2026-08-12); klaim standar seluruhnya ESTIMASI — uji nyata wajib di T12/G3. Pelajaran proses: sub-agent fail-closed jujur (2× berhenti tanpa mengarang bukti); file `gsm-*.html` terbukti invalid → profil perangkat "entry 2–4 GB" = asumsi (putusan #14: lanjut, riset ulang opsional).
 - 2026-08-12 — **Putusan QRIS HOTL**: belum ada tetapi akan menyusul — **tidak memblokir apa pun**; builder menyiapkan slot + placeholder `[dari database]`, gambar dipasang saat tersedia; tes TQ-04a menyesuaikan.
 - 2026-08-12 — **P0 paket desain TERIMPLEMENTASI**: PR #12 website-lazisnu merged (commit `90bc129`) — R1 (angka "2.500.000" bertitik diterima), R2 (banner muat-gagal + "Muat Ulang" + Simpan nonaktif), slot QRIS `[dari database]`; CI 3/3 hijau (tes-qa 11/11, gitleaks, build); MERAH awal berbukti browser nyata (CDP). P1 (R3/R4/R5/R6/R13) menyusul sebelum G3.
+- 2026-08-12 — **P1 paket desain TERIMPLEMENTASI**: PR #13 website-lazisnu merged (commit `6544382`) — R3/R4 (nol kode HTTP; jaringan/server/sesi-mati dibedakan; isian tidak dibuang saat 401), R5 (loading + tolak simpan ganda), R6 (tersalurkan ≤ terkumpul), R13 (banner sukses sebelum→sesudah + "Lihat di situs"); CI 3/3 hijau. Sisa struktur besar (R7/R8/R9/R11) = gelombang berikutnya.
 
 ## 6. Hasil kalibrasi
 
