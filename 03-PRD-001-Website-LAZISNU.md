@@ -68,7 +68,8 @@ Website resmi menjadi **identitas organisasi** yang menaikkan citra lembaga. Sat
 3. ~~Kanal donasi?~~ **TERJAWAB — putusan HOTL 2026-08-10:** tampil dengan label transparan (tertuang di AC-04).
 4. ~~Siapa admin?~~ **TERJAWAB:** 2 orang, tidak terbiasa komputer → syarat desain G1: alur update dapat dilakukan orang awam dalam **≤ 5 langkah**.
 5. ~~Hosting/anggaran?~~ **TERJAWAB:** server VM sudah tersedia (rincian: file pribadi).
-
+6. ~~Target perangkat & browser?~~ **TERJAWAB — putusan HOTL 2026-08-11:** target **Android versi 10–16** (bukan hanya HP pengurus — semua pengunjung); Tim Desain wajib meneliti **top 5 HP dan top 5 browser terpakai di Indonesia** dan memakainya sebagai matriks uji konkret.
+7. ~~Bahasa & format lokal situs?~~ **TERJAWAB — putusan HOTL 2026-08-11:** situs **sepenuhnya Bahasa Indonesia** — tanggal "11 Agustus 2026", angka bertitik ribuan & berkoma desimal, nama bulan Indonesia.
 ## 8. Rencana inkremen
 
 - **Inkremen 1 (dry run ini):** seluruh AC-01 s.d. AC-10 — situs hidup, konten nyata, angka dana dikelola admin.
@@ -82,3 +83,5 @@ Website resmi menjadi **identitas organisasi** yang menaikkan citra lembaga. Sat
 | 2026-08-10 | Koreksi HOTL: night mode masuk AC-07 | HOTL |
 | 2026-08-10 | v0.2: keputusan kanal donasi (label transparan) & legalitas (status apa adanya); isian publik dimasukkan; 5 pertanyaan terbuka terjawab | Agen-PM (dari putusan HOTL) |
 | 2026-08-10 | **GO di G0** — ratifikasi penuh; PRD sah masuk tahap P1 (desain) | HOTL |
+| 2026-08-11 | Tambah pertanyaan terbuka no. 6 (target perangkat/browser) dan no. 7 (bahasa/lokal situs) — teridentifikasi dalam tinjauan tata kelola tim desain | Architect-agent |
+| 2026-08-11 | Pertanyaan 6 & 7 terjawab HOTL (Android 10–16 + riset top-5 HP/browser Indonesia; Bahasa Indonesia penuh) | HOTL |

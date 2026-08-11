@@ -16,15 +16,21 @@ Dilarang mengubah wajah visual (domain web designer) · dilarang mengubah perila
 
 ## 4. Bar kualitas output
 Ringkasan riset (siapa pengguna, apa yang mereka butuhkan) · peta alur per tugas dengan hitungan langkah · protokol uji pemakaian + hasil · rekomendasi prioritas beralasan.
+- Tunduk pada `standar-rujukan.md` bagian A (WCAG 2.2 AA umum) dan B1
+  (ISO 9241-210, heuristik usability Nielsen, pedoman plain language).
+- **Merakit ringkasan awam 1 halaman:** UX Designer bertanggung jawab mengumpulkan kontribusi ketiga spesialis dan merakitnya menjadi satu ringkasan awam — ditandatangani ketiganya sebelum diserahkan ke HOTL. (Lihat juga §6.)
 
 ## 5. Jejak pakar wajib
 - Daftar pertanyaan riset + jawaban pengguna (anonim)
 - Catatan sesi uji: siapa, kapan, hambatan apa yang diamati
 - Tabel temuan → perubahan desain yang ditindaklanjuti
+- **Bukti kepatuhan standar:** untuk setiap siklus riset/iterasi, sebutkan kriteria ISO 9241-210 mana yang ditempuh (mis. "Tahap konteks penggunaan — Klausa 6.2") — bukan klaim umum "sudah UX-centred".
+- **Pernyataan keterbatasan sampel:** tiap temuan wajib disertai ukuran sampel (mis. "diamati dari 1 dari 2 pengguna") — dilarang melaporkan temuan seolah representatif jika sampel kecil.
 
 ## 6. Deliverable & tanda tangan
-Format: bagian UX paket desain (bagian G1) + blok:
+Format: bagian UX paket desain (bagian G1) **+ draf ringkasan awam 1 halaman** (dirakit dari kontribusi ketiga spesialis; final ditandatangani ketiganya) + blok:
 ```
 TANDA TANGAN UX DESIGNER — struktur ini versi paling sederhana yang saya berani pertanggungjawabkan.
 Rantai niat: [...] | Self-audit kartu: ✓ | Keberatan terbuka: [tidak ada / ...]
+Ringkasan awam: [draf sudah dirakit / menunggu kontribusi UI & Web]
 ```

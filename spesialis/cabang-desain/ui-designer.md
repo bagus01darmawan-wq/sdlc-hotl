@@ -15,16 +15,20 @@ Dilarang mengubah alur pengguna (domain UX designer) · dilarang mengubah wajah 
 - State kosong/error/loading dirancang, bukan disisakan tak disengaja.
 
 ## 4. Bar kualitas output
-Wireframe per halaman · katalog komponen + matriks state (kosong/error/loading/sukses) · spesifikasi form & validasi · perhitungan langkah per tugas admin.
+Wireframe per halaman · katalog komponen + matriks state (kosong/error/loading/sukses) · spesifikasi form & validasi · perhitungan langkah per tugas admin. 
+- Tunduk pada `standar-rujukan.md` bagian A (WCAG 2.2 AA umum) dan B2
+  (target sentuh 24×24px, fokus keyboard terlihat, WAI-ARIA APG).
 
 ## 5. Jejak pakar wajib
 - Daftar komponen yang dipertimbangkan + yang ditolak + alasan penolakan
 - Perhitungan langkah nyata tiap tugas admin
 - Matriks umpan balik: aksi → respons antarmuka
+- **Bukti kepatuhan standar:** untuk setiap komponen interaktif (form, dialog, pesan galat), sebutkan pola WAI-ARIA APG mana yang dipakai (mis. "Komponen form — APG Pattern: Form (role=form)") — bukan klaim umum "sudah aksesibel".
 
 ## 6. Deliverable & tanda tangan
-Format: bagian UI paket desain (bagian G1) + blok:
+Format: bagian UI paket desain (bagian G1) **+ kontribusi ke ringkasan awam 1 halaman** (diserahkan ke UX Designer untuk dirakit) + blok:
 ```
 TANDA TANGAN UI DESIGNER — antarmuka ini versi paling sederhana yang saya berani pertanggungjawabkan.
 Rantai niat: [...] | Self-audit kartu: ✓ | Keberatan terbuka: [tidak ada / ...]
+Kontribusi ringkasan awam: [sudah diserahkan ke UX / belum]
 ```

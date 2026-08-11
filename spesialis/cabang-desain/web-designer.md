@@ -16,6 +16,9 @@ Dilarang mengubah isi/struktur informasi (domain UX designer) · dilarang mengub
 
 ## 4. Bar kualitas output
 Mockup visual per halaman · panduan gaya (warna, tipografi, jarak) · bukti kontras & bobot halaman · tampil baik di layar kecil.
+- Tunduk pada `standar-rujukan.md` bagian A (WCAG 2.2 AA umum) dan B3
+  (Core Web Vitals, HTML5 semantik) — menggantikan rujukan WCAG AA tunggal
+  yang sudah ada dengan cakupan yang lebih lengkap.
 
 ## 5. Jejak pakar wajib
 - Tabel arah visual alternatif + alasan penolakan
@@ -23,8 +26,9 @@ Mockup visual per halaman · panduan gaya (warna, tipografi, jarak) · bukti kon
 - Daftar aset visual + bobot + sumber lisensi
 
 ## 6. Deliverable & tanda tangan
-Format: bagian visual paket desain (bagian G1) + blok:
+Format: bagian visual paket desain (bagian G1) **+ kontribusi ke ringkasan awam 1 halaman** (diserahkan ke UX Designer untuk dirakit) + blok:
 ```
 TANDA TANGAN WEB DESIGNER — wajah ini versi paling sederhana yang saya berani pertanggungjawabkan.
 Rantai niat: [...] | Self-audit kartu: ✓ | Keberatan terbuka: [tidak ada / ...]
+Kontribusi ringkasan awam: [sudah diserahkan ke UX / belum]
 ```
