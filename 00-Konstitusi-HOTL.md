@@ -141,3 +141,5 @@ Salah satu dari:
 | 2026-08-12 | **GO pencatatan tonggak GO struktur besar** (PR #22 tata kelola: GO PR website #14 + deploy tercatat) | Protokol TONGGAK | **DIRATIFIKASI (GO) oleh HOTL 2026-08-12** | PR #22 |
 | 2026-08-12 | **GO PR website #15 — validasi aplikasi** (R10 fallback tanggal, R12 URL foto https://, R14 galat kolom kosong); ter-deploy | Pasal 4 | **DIRATIFIKASI (GO) oleh HOTL 2026-08-12** | PR website #15 |
 | 2026-08-12 | **GO pencatatan tonggak validasi aplikasi** (PR #23 tata kelola) | Protokol TONGGAK | **DIRATIFIKASI (GO) oleh HOTL 2026-08-12** | PR #23 |
+| 2026-08-12 | **GO PR website #16 — wajah Web W1–W20 + perbaikan CI gitleaks** (palet hijau tua + emas, mode gelap penuh, tipografi/fokus; pemindai diganti binary OSS); ter-deploy → **paket desain form admin TUNTAS 100%** | Pasal 4 | **DIRATIFIKASI (GO) oleh HOTL 2026-08-12** | PR website #16 |
+| 2026-08-12 | **GO pencatatan tonggak wajah Web** (PR #24 tata kelola) | Protokol TONGGAK | **DIRATIFIKASI (GO) oleh HOTL 2026-08-12** | PR #24 |
