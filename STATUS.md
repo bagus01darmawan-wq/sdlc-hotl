@@ -24,7 +24,7 @@
 | 1 | **Sesi latihan admin (T12)** — ±30 menit, 2 admin diajari mengisi form (butuh HOTL hadir) | 2026-08-11 | Jadwal sesi |
 | 2 | **QRIS** — belum ada, akan menyusul (putusan HOTL 2026-08-12): **TIDAK memblokir**; sediakan slot + placeholder `[dari database]`; gambar dipasang saat tersedia → TQ-04a menyesuaikan | 2026-08-11 | Gambar QRIS (menyusul) |
 | 3 | **G3** — panggil QA-agent gelombang-3 (TQ-04a, TQ-06, TQ-07, TQ-08, TQ-O4) | 2026-08-11 | Kapan dimulai |
-| 4 | **GO PR website #15 (validasi aplikasi)** — R14 galat kolom, R12 URL foto https://, R10 fallback tanggal id-ID; CI 3/3 hijau, menunggu GO | 2026-08-12 | Merge ke main website |
+| 4 | **GO PR website #16 (wajah Web W1–W20 + perbaikan CI gitleaks)** — CI 3/3 hijau, menunggu GO | 2026-08-12 | Merge ke main website |
 
 ## 3. Pekerjaan aktif (cermin tabel pelacakan)
 
@@ -32,11 +32,11 @@
 |---|---|---|---|---|---|
 | PRD-001 | Website Identitas LAZISNU | P2 — T1–T10 selesai, tes G1+G2 11/11 hijau | hermes (builder) | — | **Situs LIVE** + CI hijau; menunggu T12/G3/vonis reviewer |
 | SISTEM | Cabang khusus Tim Desain | Diratifikasi | — | — | **AKTIF** (PR #12/#13) — ujian pertama LULUS 2026-08-12 |
-| DESAIN-T8 | Paket desain form admin (Tim Desain: riset UX + antarmuka UI + wajah Web) | P0+P1+STRUKTUR BESAR LIVE (PR #12/#13/#14 + deploy, GO 2026-08-12); VALIDASI R10/R12/R14 di PR website #15 menunggu GO — sisa: wajah Web W1–W20 | hermes (builder) | GO PR #15 | **R7–R14 sebagian besar live; validasi menunggu GO** |
+| DESAIN-T8 | Paket desain form admin (Tim Desain: riset UX + antarmuka UI + wajah Web) | P0+P1+STRUKTUR BESAR+VALIDASI LIVE (PR #12/#13/#14/#15 + deploy, GO 2026-08-12); WAJAH WEB W1–W20 di PR website #16 menunggu GO | hermes (builder) | GO PR #16 | **Seluruh R0–R14 + W1–W20 terimplementasi; tinggal GO + deploy + uji nyata T12/G3** |
 
 ## 4. Langkah berikutnya (siapa melakukan apa)
 
-1. **Builder (hermes):** setelah GO PR website #15 — gelombang terakhir paket: wajah Web W1–W20 (palet hijau tua #0B3D2E + emas, mode gelap penuh, chip nav, fokus 2px).
+1. **HOTL:** GO PR website #16 (wajah Web W1–W20 + perbaikan CI gitleaks) → builder deploy + paket desain tuntas; lalu fasilitasi T12 dan siapkan bukti vonis G2.
 2. **HOTL:** tentukan jadwal sesi latihan admin (T12) — 2 akun admin siap di `D:\bukti-builder\admin-akun.txt`.
 3. **QRIS (putusan HOTL 2026-08-12):** belum ada, akan menyusul — builder sediakan slot + placeholder `[dari database]` (sudah di P0); gambar dipasang saat tersedia.
 4. **Reviewer (independen):** vonis G2 dengan bukti demo per AC; lalu **QA-agent** gelombang-3 (G3) untuk sisa tes.
@@ -66,6 +66,9 @@
 - 2026-08-12 — **Decision log tertinggal dirapikan**: baris ratifikasi PR #16 (PR #17) dan putusan PR #18/#19/#20 sempat tidak tercatat di Apendiks B (tercatat di Pelajaran) — satu PR pencatatan merapikan semuanya (PR #21).
 - 2026-08-12 — **GO + deploy struktur besar**: PR website #14 merged (`01624e3`, GO HOTL) + `scripts/deploy-vm.sh` → fitur LIVE di https://png.lazisnu.site (terverifikasi: `tautan-admin` di header publik, `layar-nav` di admin.html); repo tetap bersih (template dipulihkan skrip).
 - 2026-08-12 — **Validasi aplikasi TERIMPLEMENTASI** (PR website #15, menunggu GO): R14 galat kolom kosong per kolom (required native diganti pesan aplikasi Bahasa Indonesia ≤20 kata + fokus kolom pertama salah), R12 URL foto `type="text"` + wajib https://, R10 fallback tanggal manual id-ID ("11 Agustus 2026" ter-parse ke ISO, galat verbatim) + pintu uji `LAZISNU_PAKSA_TANGGAL_TEKS` untuk G3; bukti di `D:\bukti-builder\validasi-form\`; lokal & CI 11/11 hijau.
+- 2026-08-12 — **Validasi aplikasi LIVE**: GO HOTL → PR website #15 merged (`8b45ecb`) + deploy; galat-periode & hint foto terverifikasi di png.lazisnu.site.
+- 2026-08-12 — **Wajah Web W1–W20 TERIMPLEMENTASI** (PR website #16, menunggu GO): palet terang `#FFFFFF`/`#0B3D2E` + garis emas `#C9A227` 3px; gelap `#0E1A14`/`#0A2A1F`/`#1E7A52`; tipografi 16px dasar (h1 22px); radius 8px; fokus 2px emas di header (perbaikan spesifisitas selektor ganda); toggle "Gelap"/"Terang"; bukti terang/gelap di `D:\bukti-builder\wajah-web\`; lokal & CI 11/11.
+- 2026-08-12 — **INSIDEN INFRA CI + perbaikan**: `gitleaks-action@v2` mewajibkan lisensi komersial → job MERAH tanpa kebocoran; diganti binary OSS gitleaks v8.18.4 di host runner. Dua percobaan pertama gagal senyap (docker: `dubious ownership` → "no leaks found" PALSU scan 2 ms) — tertangkap lewat pembacaan LOG, bukan status job; pemindaian nyata terbukti "18 commits scanned" (22 − 4 merge). Pelajaran: verifikasi pemindai = baca log scan (jumlah commit), bukan status hijau saja; docker action pihak ketiga dengan tag mengambang = risiko perubahan hulu (lisensi).
 
 ## 6. Hasil kalibrasi
 
