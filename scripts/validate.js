@@ -80,20 +80,22 @@ if (process.env.CI === 'true' && exists('PRIBADI-JANGAN-DIUNGGAH.md')) {
 }
 
 // 6. Kartu spesialis berkontrak lengkap (Doktrin Spesialis)
+//    Kartu inti di spesialis/ + kartu cabang khusus (ruangan tim) di subfolder.
 const KARTU_WAJIB = ['pm.md', 'architect.md', 'qa.md', 'builder.md', 'reviewer.md', 'auditor.md'];
+const KARTU_CABANG = ['cabang-desain/web-designer.md', 'cabang-desain/ui-designer.md', 'cabang-desain/ux-designer.md'];
+const SEMUA_KARTU = [...KARTU_WAJIB.map((f) => `spesialis/${f}`), ...KARTU_CABANG.map((f) => `spesialis/${f}`)];
 const BAGIAN_KARTU = ['## 1. Kepemilikan mutlak', '## 2. Batas kedaulatan', '## 3. Naluri pakar', '## 4. Bar kualitas output', '## 5. Jejak pakar wajib', '## 6. Deliverable & tanda tangan'];
 if (!exists('spesialis')) {
   failures.push('folder spesialis/ hilang');
 } else {
-  for (const f of KARTU_WAJIB) {
-    const rel = `spesialis/${f}`;
+  for (const rel of SEMUA_KARTU) {
     if (!exists(rel)) { failures.push(`kartu spesialis hilang: ${rel}`); continue; }
     const t = read(rel);
     for (const b of BAGIAN_KARTU) {
       if (!t.includes(b)) failures.push(`${rel}: bagian kontrak hilang -> "${b}"`);
     }
   }
-  infos.push(`kartu spesialis diperiksa kontraknya: ${KARTU_WAJIB.length}`);
+  infos.push(`kartu spesialis diperiksa kontraknya: ${SEMUA_KARTU.length} (inti + cabang)`);
 }
 
 // Laporan akhir

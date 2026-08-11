@@ -1,6 +1,6 @@
 # STATUS SISTEM — ingatan SDLC-HOTL
 
-**Terakhir diperbarui:** 2026-08-10 (wajib diperbarui di akhir setiap sesi — lihat Protokol Tutup Sesi di `AGENTS.md`)
+**Terakhir diperbarui:** 2026-08-11 (wajib diperbarui di akhir setiap sesi — lihat Protokol Tutup Sesi di `AGENTS.md`)
 
 > **Ringkas untuk agen yang baru bangun:** Konstitusi v0.1 sudah diratifikasi. Kita sedang menyiapkan dry run pertama: Website LAZISNU (PRD-001), status draf, menunggu ratifikasi G0 oleh HOTL. Trust level 0 = semua langkah menunggu putusan HOTL.
 
@@ -20,6 +20,7 @@
 | # | Hal | Sejak | Tergantung jawaban HOTL tentang |
 |---|---|---|---|
 | 1 | Jalankan hermes dengan surat tugas (berkas 07) — pantau: repo website lahir, tes MERAH dulu, lalu hijau bertahap | 2026-08-10 | — |
+| 2 | **Amendemen: cabang khusus Tim Desain** (`spesialis/cabang-desain/` — piagam + kartu web/UI/UX designer) | 2026-08-11 | Ratifikasi GO/NO-GO di PR |
 
 ## 3. Pekerjaan aktif (cermin tabel pelacakan)
 

@@ -73,7 +73,7 @@ Sistem ini diakui belum sempurna dan dirancang untuk menyempurnakan dirinya send
 | `05-Rencana-Tes-PRD-001.md` | Tes QA untuk PRD-001 (ditulis sebelum builder mulai) |
 | `07-Surat-Tugas-Builder-Hermes.md` | Misi kerja builder (hermes) PRD-001 + aturan keras A–F |
 | `06-Cadence-Metrik.md` | Ritme HOTL/spesialis + metrik kesehatan sistem |
-| `spesialis/` | Doktrin + 6 Kartu Spesialis + rekam jejak. Sebelum ambil peran, baca kartu peranmu |
+| `spesialis/` | Doktrin + 6 Kartu Spesialis inti + rekam jejak + **cabang khusus** `cabang-desain/` (Tim Desain: web designer, UI designer, UX designer). Sebelum ambil peran, baca kartu peranmu |
 | `README.md` | Deskripsi repo untuk pembaca manusia |
 | `scripts/validate.js` | Pemeriksa otomatis, dijalankan CI. Jalankan lokal: `node scripts/validate.js` |
 | `.github/` | Workflow CI `gerbang-tata-kelola` + template PR (format vonis 4 baris) |
