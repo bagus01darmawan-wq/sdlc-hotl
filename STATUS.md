@@ -22,7 +22,7 @@
 | # | Hal | Sejak | Tergantung jawaban HOTL tentang |
 |---|---|---|---|
 | 1 | **Sesi latihan admin (T12)** — ±30 menit, 2 admin diajari mengisi form (butuh HOTL hadir) | 2026-08-11 | Jadwal sesi |
-| 2 | **QRIS** (opsional) — butuh gambar dari HOTL; prasyarat tes TQ-04a di G3 | 2026-08-11 | Ada/tidak & gambarnya |
+| 2 | **QRIS** — belum ada, akan menyusul (putusan HOTL 2026-08-12): **TIDAK memblokir**; sediakan slot + placeholder `[dari database]`; gambar dipasang saat tersedia → TQ-04a menyesuaikan | 2026-08-11 | Gambar QRIS (menyusul) |
 | 3 | **G3** — panggil QA-agent gelombang-3 (TQ-04a, TQ-06, TQ-07, TQ-08, TQ-O4) | 2026-08-11 | Kapan dimulai |
 
 ## 3. Pekerjaan aktif (cermin tabel pelacakan)
@@ -36,7 +36,7 @@
 ## 4. Langkah berikutnya (siapa melakukan apa)
 
 1. **HOTL:** tentukan jadwal sesi latihan admin (T12) — 2 akun admin siap di `D:\bukti-builder\admin-akun.txt`.
-2. **HOTL:** putuskan QRIS (ada/tidak); jika ada, berikan gambar → builder pasang (T12).
+2. **QRIS (putusan HOTL 2026-08-12):** belum ada, akan menyusul — builder sediakan slot + placeholder `[dari database]`; gambar dipasang saat tersedia.
 3. **Builder (hermes):** implementasi rekomendasi P0 paket desain form admin (R1: terima angka bertitik; R2: banner muat-gagal) → fasilitasi T12 + QRIS; siapkan bukti untuk vonis G2 (demo per AC).
 4. **Reviewer (independen):** vonis G2 dengan bukti demo per AC; lalu **QA-agent** gelombang-3 (G3) untuk sisa tes.
 5. **HOTL:** ratifikasi G2/G3 → rilis resmi (G3) + pencatatan hasil kalibrasi pertama.
@@ -57,6 +57,7 @@
 - 2026-08-11 — **Jawaban HOTL menutup PRD-001 §7 no. 6–7**: target Android 10–16 + riset top-5 HP/browser Indonesia; situs sepenuhnya Bahasa Indonesia. Baris #5–#6 tabel "Menunggu putusan" dihapus dari STATUS.md (Protokol TONGGAK).
 - 2026-08-11 — **PR #16 DIRATIFIKASI (GO) oleh HOTL**: revisi tata kelola Tim Desain (standar-rujukan.md + 3 kartu bergigi standar) + jawaban PRD-001 §7 no. 6–7 resmi masuk main (merge commit `fdcdc70`).
 - 2026-08-12 — **Ujian pertama Tim Desain LULUS**: paket desain form admin (matriks target + riset UX 15 hambatan + kerangka UI K1–K14 + wajah Web W1–W20 + ringkasan awam) dihasilkan lewat arsitektur sub-agent "satu kartu = satu spawn" (acuan: `D:\subagent-arsitektur\keluaran\`); 16 keberatan spesialis direkap, **HOTL GO semua putusan** (2026-08-12); klaim standar seluruhnya ESTIMASI — uji nyata wajib di T12/G3. Pelajaran proses: sub-agent fail-closed jujur (2× berhenti tanpa mengarang bukti); file `gsm-*.html` terbukti invalid → profil perangkat "entry 2–4 GB" = asumsi (putusan #14: lanjut, riset ulang opsional).
+- 2026-08-12 — **Putusan QRIS HOTL**: belum ada tetapi akan menyusul — **tidak memblokir apa pun**; builder menyiapkan slot + placeholder `[dari database]`, gambar dipasang saat tersedia; tes TQ-04a menyesuaikan.
 
 ## 6. Hasil kalibrasi
 
