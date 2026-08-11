@@ -24,6 +24,7 @@
 | 1 | **Sesi latihan admin (T12)** — ±30 menit, 2 admin diajari mengisi form (butuh HOTL hadir) | 2026-08-11 | Jadwal sesi |
 | 2 | **QRIS** — belum ada, akan menyusul (putusan HOTL 2026-08-12): **TIDAK memblokir**; sediakan slot + placeholder `[dari database]`; gambar dipasang saat tersedia → TQ-04a menyesuaikan | 2026-08-11 | Gambar QRIS (menyusul) |
 | 3 | **G3** — panggil QA-agent gelombang-3 (TQ-04a, TQ-06, TQ-07, TQ-08, TQ-O4) | 2026-08-11 | Kapan dimulai |
+| 4 | **GO PR website #15 (validasi aplikasi)** — R14 galat kolom, R12 URL foto https://, R10 fallback tanggal id-ID; CI 3/3 hijau, menunggu GO | 2026-08-12 | Merge ke main website |
 
 ## 3. Pekerjaan aktif (cermin tabel pelacakan)
 
@@ -31,11 +32,11 @@
 |---|---|---|---|---|---|
 | PRD-001 | Website Identitas LAZISNU | P2 — T1–T10 selesai, tes G1+G2 11/11 hijau | hermes (builder) | — | **Situs LIVE** + CI hijau; menunggu T12/G3/vonis reviewer |
 | SISTEM | Cabang khusus Tim Desain | Diratifikasi | — | — | **AKTIF** (PR #12/#13) — ujian pertama LULUS 2026-08-12 |
-| DESAIN-T8 | Paket desain form admin (Tim Desain: riset UX + antarmuka UI + wajah Web) | P0+P1+STRUKTUR BESAR LIVE (PR website #12/#13/#14 merged + deploy VM, GO HOTL 2026-08-12) — sisa R10/R12/R14 + wajah Web W1–W20 | hermes (builder) | GO lanjut sisa | **R7/R8/R9/R11 ✅ live di https://png.lazisnu.site** |
+| DESAIN-T8 | Paket desain form admin (Tim Desain: riset UX + antarmuka UI + wajah Web) | P0+P1+STRUKTUR BESAR LIVE (PR #12/#13/#14 + deploy, GO 2026-08-12); VALIDASI R10/R12/R14 di PR website #15 menunggu GO — sisa: wajah Web W1–W20 | hermes (builder) | GO PR #15 | **R7–R14 sebagian besar live; validasi menunggu GO** |
 
 ## 4. Langkah berikutnya (siapa melakukan apa)
 
-1. **Builder (hermes):** gelombang sisa paket desain (R10 fallback tanggal, R12 validasi URL foto, R14 galat kolom kosong, lalu wajah Web W1–W20) — GO HOTL PR website #14 selesai 2026-08-12, tidak ada blokir.
+1. **Builder (hermes):** setelah GO PR website #15 — gelombang terakhir paket: wajah Web W1–W20 (palet hijau tua #0B3D2E + emas, mode gelap penuh, chip nav, fokus 2px).
 2. **HOTL:** tentukan jadwal sesi latihan admin (T12) — 2 akun admin siap di `D:\bukti-builder\admin-akun.txt`.
 3. **QRIS (putusan HOTL 2026-08-12):** belum ada, akan menyusul — builder sediakan slot + placeholder `[dari database]` (sudah di P0); gambar dipasang saat tersedia.
 4. **Reviewer (independen):** vonis G2 dengan bukti demo per AC; lalu **QA-agent** gelombang-3 (G3) untuk sisa tes.
@@ -64,6 +65,7 @@
 - 2026-08-12 — **Pitfall TQ-10**: pemindai tautan QA menganggap `admin.html?layar=x` TAUTAN RUSAK (query string tak di-resolve ke berkas) → navigasi layar memakai hash `#layar=` (tetap URL sendiri per layar, bisa di-refresh, TQ-10 hijau). Keputusan mikro tercatat di body PR website #14.
 - 2026-08-12 — **Decision log tertinggal dirapikan**: baris ratifikasi PR #16 (PR #17) dan putusan PR #18/#19/#20 sempat tidak tercatat di Apendiks B (tercatat di Pelajaran) — satu PR pencatatan merapikan semuanya (PR #21).
 - 2026-08-12 — **GO + deploy struktur besar**: PR website #14 merged (`01624e3`, GO HOTL) + `scripts/deploy-vm.sh` → fitur LIVE di https://png.lazisnu.site (terverifikasi: `tautan-admin` di header publik, `layar-nav` di admin.html); repo tetap bersih (template dipulihkan skrip).
+- 2026-08-12 — **Validasi aplikasi TERIMPLEMENTASI** (PR website #15, menunggu GO): R14 galat kolom kosong per kolom (required native diganti pesan aplikasi Bahasa Indonesia ≤20 kata + fokus kolom pertama salah), R12 URL foto `type="text"` + wajib https://, R10 fallback tanggal manual id-ID ("11 Agustus 2026" ter-parse ke ISO, galat verbatim) + pintu uji `LAZISNU_PAKSA_TANGGAL_TEKS` untuk G3; bukti di `D:\bukti-builder\validasi-form\`; lokal & CI 11/11 hijau.
 
 ## 6. Hasil kalibrasi
 
