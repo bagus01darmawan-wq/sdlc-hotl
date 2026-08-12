@@ -21,7 +21,7 @@
 
 | # | Hal | Sejak | Tergantung jawaban HOTL tentang |
 |---|---|---|---|
-| 1 | **Sesi latihan admin (T12)** — ±30 menit, 2 admin diajari mengisi form (butuh HOTL hadir) | 2026-08-11 | Jadwal sesi |
+| 1 | **Sesi T12 admin 2 (maahinguinandra)** — **DIJADWALKAN 2026-08-12** (latihan + uji nyata kedua); sesi admin 1 (HOTL) SELESAI: temuan F1/F2/F3 + perbaikan live (lihat Pelajaran) | 2026-08-12 | Admin 2 hadir di perangkat |
 | 2 | **QRIS** — belum ada, akan menyusul (putusan HOTL 2026-08-12): **TIDAK memblokir**; sediakan slot + placeholder `[dari database]`; gambar dipasang saat tersedia → TQ-04a menyesuaikan | 2026-08-11 | Gambar QRIS (menyusul) |
 | 3 | **G3** — panggil QA-agent gelombang-3 (TQ-04a, TQ-06, TQ-07, TQ-08, TQ-O4) | 2026-08-11 | Kapan dimulai |
 | 4 | **TQ-O3 (lupa sandi)** — selesai diimplementasikan & ter-deploy (PR website #17/#18); TINGGAL email reset baru: rate-limit Supabase per jam menghambat kirim ulang sesi ini (429); kirim ulang setelah jeda, lalu uji end-to-end | 2026-08-12 | Email baru terkirim + HOTL selesaikan alur |
@@ -37,7 +37,7 @@
 
 ## 4. Langkah berikutnya (siapa melakukan apa)
 
-1. **HOTL:** tentukan jadwal sesi latihan admin (T12) — 2 akun admin siap di `D:\bukti-builder\admin-akun.txt`; inilah uji nyata pertama paket desain dengan pengurus sungguhan.
+1. **HOTL:** jalankan sesi T12 admin 2 (maahinguinandra) sesuai lembar panduan (tercatat 2026-08-12); setelah itu tandai TQ-O3: coba kirim email reset (jeda rate-limit Supabase) → klik → ganti sandi → masuk → perbarui berkas kredensial lokal.
 2. **QRIS (putusan HOTL 2026-08-12):** belum ada, akan menyusul — slot + placeholder `[dari database]` sudah terpasang (P0); gambar dipasang saat tersedia.
 3. **Reviewer (independen):** vonis G2 dengan bukti demo per AC; lalu **QA-agent** gelombang-3 (G3) untuk sisa tes.
 4. **HOTL:** ratifikasi G2/G3 → rilis resmi (G3) + pencatatan hasil kalibrasi pertama.
