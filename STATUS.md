@@ -2,7 +2,7 @@
 
 **Terakhir diperbarui:** 2026-08-12 (wajib diperbarui di akhir setiap sesi — lihat Protokol Tutup Sesi di `AGENTS.md`)
 
-> **Ringkas untuk agen yang baru bangun:** Konstitusi v0.1 diratifikasi. Dry run PRD-001 (Website LAZISNU) sudah jauh: situs **LIVE di https://png.lazisnu.site**, tes QA Gelombang-1 & 2 (11 tes) **hijau semua di CI**, database schema `lazisnu` aktif, dan cabang khusus Tim Desain (web/UI/UX designer) baru lahir (PR #12/#13). **Tim Desain lulus ujian pertamanya 2026-08-12: paket desain form admin selesai (5 deliverable, 16 putusan HOTL GO), P0+P1+struktur besar LIVE di main dan ter-deploy (PR website #12/#13/#14, GO HOTL 2026-08-12), sisa R10/R12/R14 + wajah Web.** Yang menunggu HOTL: sesi latihan admin (T12), QRIS opsional, lalu G3 (gelombang tes 3). Trust level 0 = semua langkah menunggu putusan HOTL.
+> **Ringkas untuk agen yang baru bangun:** Konstitusi v0.1 diratifikasi. Dry run PRD-001 (Website LAZISNU) sudah jauh: situs **LIVE di https://png.lazisnu.site**, tes QA Gelombang-1 & 2 (11 tes) **hijau semua di CI**, database schema `lazisnu` aktif, dan cabang khusus Tim Desain (web/UI/UX designer) lahir (PR #12/#13). **PAKET DESAIN FORM ADMIN TUNTAS 100% — Tim Desain lulus ujian pertamanya: 5 deliverable, 16 putusan HOTL GO, seluruh R0–R14 + W1–W20 terimplementasi & live (PR website #12–#16, GO HOTL 2026-08-12).** Yang menunggu HOTL: jadwal sesi latihan admin (T12), QRIS opsional, lalu G3 + vonis reviewer. Trust level 0 = semua langkah menunggu putusan HOTL.
 
 ---
 
@@ -24,7 +24,6 @@
 | 1 | **Sesi latihan admin (T12)** — ±30 menit, 2 admin diajari mengisi form (butuh HOTL hadir) | 2026-08-11 | Jadwal sesi |
 | 2 | **QRIS** — belum ada, akan menyusul (putusan HOTL 2026-08-12): **TIDAK memblokir**; sediakan slot + placeholder `[dari database]`; gambar dipasang saat tersedia → TQ-04a menyesuaikan | 2026-08-11 | Gambar QRIS (menyusul) |
 | 3 | **G3** — panggil QA-agent gelombang-3 (TQ-04a, TQ-06, TQ-07, TQ-08, TQ-O4) | 2026-08-11 | Kapan dimulai |
-| 4 | **GO PR website #16 (wajah Web W1–W20 + perbaikan CI gitleaks)** — CI 3/3 hijau, menunggu GO | 2026-08-12 | Merge ke main website |
 
 ## 3. Pekerjaan aktif (cermin tabel pelacakan)
 
@@ -32,15 +31,14 @@
 |---|---|---|---|---|---|
 | PRD-001 | Website Identitas LAZISNU | P2 — T1–T10 selesai, tes G1+G2 11/11 hijau | hermes (builder) | — | **Situs LIVE** + CI hijau; menunggu T12/G3/vonis reviewer |
 | SISTEM | Cabang khusus Tim Desain | Diratifikasi | — | — | **AKTIF** (PR #12/#13) — ujian pertama LULUS 2026-08-12 |
-| DESAIN-T8 | Paket desain form admin (Tim Desain: riset UX + antarmuka UI + wajah Web) | P0+P1+STRUKTUR BESAR+VALIDASI LIVE (PR #12/#13/#14/#15 + deploy, GO 2026-08-12); WAJAH WEB W1–W20 di PR website #16 menunggu GO | hermes (builder) | GO PR #16 | **Seluruh R0–R14 + W1–W20 terimplementasi; tinggal GO + deploy + uji nyata T12/G3** |
+| DESAIN-T8 | Paket desain form admin (Tim Desain: riset UX + antarmuka UI + wajah Web) | **TUNTAS 100%** — R0–R14 + W1–W20 LIVE (PR website #12/#13/#14/#15/#16 + deploy, GO HOTL 2026-08-12) | — | Uji nyata T12/G3 + vonis reviewer | **Paket desain selesai; menunggu bukti pengguna nyata** |
 
 ## 4. Langkah berikutnya (siapa melakukan apa)
 
-1. **HOTL:** GO PR website #16 (wajah Web W1–W20 + perbaikan CI gitleaks) → builder deploy + paket desain tuntas; lalu fasilitasi T12 dan siapkan bukti vonis G2.
-2. **HOTL:** tentukan jadwal sesi latihan admin (T12) — 2 akun admin siap di `D:\bukti-builder\admin-akun.txt`.
-3. **QRIS (putusan HOTL 2026-08-12):** belum ada, akan menyusul — builder sediakan slot + placeholder `[dari database]` (sudah di P0); gambar dipasang saat tersedia.
-4. **Reviewer (independen):** vonis G2 dengan bukti demo per AC; lalu **QA-agent** gelombang-3 (G3) untuk sisa tes.
-5. **HOTL:** ratifikasi G2/G3 → rilis resmi (G3) + pencatatan hasil kalibrasi pertama.
+1. **HOTL:** tentukan jadwal sesi latihan admin (T12) — 2 akun admin siap di `D:\bukti-builder\admin-akun.txt`; inilah uji nyata pertama paket desain dengan pengurus sungguhan.
+2. **QRIS (putusan HOTL 2026-08-12):** belum ada, akan menyusul — slot + placeholder `[dari database]` sudah terpasang (P0); gambar dipasang saat tersedia.
+3. **Reviewer (independen):** vonis G2 dengan bukti demo per AC; lalu **QA-agent** gelombang-3 (G3) untuk sisa tes.
+4. **HOTL:** ratifikasi G2/G3 → rilis resmi (G3) + pencatatan hasil kalibrasi pertama.
 
 ## 5. Pelajaran tercatat
 
@@ -69,6 +67,7 @@
 - 2026-08-12 — **Validasi aplikasi LIVE**: GO HOTL → PR website #15 merged (`8b45ecb`) + deploy; galat-periode & hint foto terverifikasi di png.lazisnu.site.
 - 2026-08-12 — **Wajah Web W1–W20 TERIMPLEMENTASI** (PR website #16, menunggu GO): palet terang `#FFFFFF`/`#0B3D2E` + garis emas `#C9A227` 3px; gelap `#0E1A14`/`#0A2A1F`/`#1E7A52`; tipografi 16px dasar (h1 22px); radius 8px; fokus 2px emas di header (perbaikan spesifisitas selektor ganda); toggle "Gelap"/"Terang"; bukti terang/gelap di `D:\bukti-builder\wajah-web\`; lokal & CI 11/11.
 - 2026-08-12 — **INSIDEN INFRA CI + perbaikan**: `gitleaks-action@v2` mewajibkan lisensi komersial → job MERAH tanpa kebocoran; diganti binary OSS gitleaks v8.18.4 di host runner. Dua percobaan pertama gagal senyap (docker: `dubious ownership` → "no leaks found" PALSU scan 2 ms) — tertangkap lewat pembacaan LOG, bukan status job; pemindaian nyata terbukti "18 commits scanned" (22 − 4 merge). Pelajaran: verifikasi pemindai = baca log scan (jumlah commit), bukan status hijau saja; docker action pihak ketiga dengan tag mengambang = risiko perubahan hulu (lisensi).
+- 2026-08-12 — **PAKET DESAIN FORM ADMIN TUNTAS 100%**: PR website #16 merged (`efa8402`, GO HOTL) + deploy → seluruh R0–R14 + W1–W20 live di https://png.lazisnu.site (terverifikasi: palet `#0b3d2e` di CSS live, toggle "Gelap", aturan focus-visible). Milestone ujian pertama Tim Desain: dari angan-angan "satu spesialis satu sub-agent" (2026-08-11) sampai 5 deliverable + 5 gelombang implementasi + 5 PR website dalam satu hari. Sisa: bukti pengguna nyata (T12/G3) + vonis reviewer + rilis G3.
 
 ## 6. Hasil kalibrasi
 
